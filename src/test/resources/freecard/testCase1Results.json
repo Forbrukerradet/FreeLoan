@@ -1,0 +1,2501 @@
+[
+    {
+        "governmentEffectiveRate": 25.296395274023652,
+        "governmentMonthlyPayment": 1409.44,
+        "effectiveRate": 20.207523084017364,
+        "monthlyPayment": 1389.72,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 21.69907798374837,
+        "governmentMonthlyPayment": 1388.08,
+        "effectiveRate": 17.238430994244226,
+        "monthlyPayment": 1370.08,
+        "remainder": 0.02
+    },
+    {
+        "governmentEffectiveRate": 17.120708975875832,
+        "governmentMonthlyPayment": 1360.31,
+        "effectiveRate": 13.526581745195209,
+        "monthlyPayment": 1347.49,
+        "remainder": 0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 25.330392284758197,
+        "governmentMonthlyPayment": 1409.64,
+        "effectiveRate": 19.814345055535565,
+        "monthlyPayment": 1390.62,
+        "remainder": 0.07
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 21.714096288145377,
+        "governmentMonthlyPayment": 1388.17,
+        "effectiveRate": 17.49834496762319,
+        "monthlyPayment": 1371.81,
+        "remainder": 0.03
+    },
+    {
+        "governmentEffectiveRate": 19.940081322165625,
+        "governmentMonthlyPayment": 1377.49,
+        "effectiveRate": 15.920420157176052,
+        "monthlyPayment": 1361.27,
+        "remainder": 0.01
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 28.417637915254225,
+        "governmentMonthlyPayment": 1427.66,
+        "effectiveRate": 23.354468592916344,
+        "monthlyPayment": 1410.24,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.055584948989654,
+        "governmentMonthlyPayment": 1442.84,
+        "effectiveRate": 25.29343554010941,
+        "monthlyPayment": 1422.73,
+        "remainder": -0.04
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 28.417637915254225,
+        "governmentMonthlyPayment": 1427.66,
+        "effectiveRate": 23.354468592916344,
+        "monthlyPayment": 1410.24,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 28.417637915254225,
+        "governmentMonthlyPayment": 1427.66,
+        "effectiveRate": 23.354468592916344,
+        "monthlyPayment": 1410.24,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 28.417637915254225,
+        "governmentMonthlyPayment": 1427.66,
+        "effectiveRate": 23.354468592916344,
+        "monthlyPayment": 1410.24,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 19.940081322165625,
+        "governmentMonthlyPayment": 1377.49,
+        "effectiveRate": 15.920420157176052,
+        "monthlyPayment": 1361.27,
+        "remainder": 0.01
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 27.204115898608915,
+        "governmentMonthlyPayment": 1420.61,
+        "effectiveRate": 22.41404379242691,
+        "monthlyPayment": 1404.14,
+        "remainder": -0.01
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.829669401266766,
+        "governmentMonthlyPayment": 1435.81,
+        "effectiveRate": 24.46570390769245,
+        "monthlyPayment": 1417.41,
+        "remainder": -0.01
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 16.650573011396453,
+        "governmentMonthlyPayment": 1357.42,
+        "effectiveRate": 13.300377816078424,
+        "monthlyPayment": 1343.58,
+        "remainder": 0.05
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 16.816367858428215,
+        "governmentMonthlyPayment": 1358.44,
+        "effectiveRate": 13.542309442462198,
+        "monthlyPayment": 1345.23,
+        "remainder": -0.04
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 21.842634092512636,
+        "governmentMonthlyPayment": 1388.94,
+        "effectiveRate": 16.907293863251226,
+        "monthlyPayment": 1371.44,
+        "remainder": -0.01
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 26.676253281830498,
+        "governmentMonthlyPayment": 1417.53,
+        "effectiveRate": 21.985547804797314,
+        "monthlyPayment": 1401.35,
+        "remainder": 0.02
+    },
+    {
+        "governmentEffectiveRate": 26.676253281830498,
+        "governmentMonthlyPayment": 1417.53,
+        "effectiveRate": 21.985547804797314,
+        "monthlyPayment": 1401.35,
+        "remainder": 0.02
+    },
+    {
+        "governmentEffectiveRate": 26.676253281830498,
+        "governmentMonthlyPayment": 1417.53,
+        "effectiveRate": 21.985547804797314,
+        "monthlyPayment": 1401.35,
+        "remainder": 0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 28.777073329177693,
+        "governmentMonthlyPayment": 1429.74,
+        "effectiveRate": 23.652605896735146,
+        "monthlyPayment": 1412.17,
+        "remainder": -0.06
+    },
+    {
+        "governmentEffectiveRate": 22.4196035068857,
+        "governmentMonthlyPayment": 1392.39,
+        "effectiveRate": 18.140182385476187,
+        "monthlyPayment": 1376.08,
+        "remainder": -0.04
+    },
+    {
+        "governmentEffectiveRate": 22.4196035068857,
+        "governmentMonthlyPayment": 1392.39,
+        "effectiveRate": 18.140182385476187,
+        "monthlyPayment": 1376.08,
+        "remainder": -0.04
+    },
+    {
+        "governmentEffectiveRate": 30.887742619745072,
+        "governmentMonthlyPayment": 1441.88,
+        "effectiveRate": 25.36635621532246,
+        "monthlyPayment": 1423.19,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 24.32824762127721,
+        "governmentMonthlyPayment": 1403.73,
+        "effectiveRate": 19.692137066706806,
+        "monthlyPayment": 1386.33,
+        "remainder": 0.05
+    },
+    {
+        "governmentEffectiveRate": 31.3356279069398,
+        "governmentMonthlyPayment": 1444.44,
+        "effectiveRate": 24.7783271871598,
+        "monthlyPayment": 1425.54,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 29.742757883351256,
+        "governmentMonthlyPayment": 1435.31,
+        "effectiveRate": 23.628822006318927,
+        "monthlyPayment": 1416.18,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 20.88816493324186,
+        "governmentMonthlyPayment": 1383.21,
+        "effectiveRate": 16.788233471865933,
+        "monthlyPayment": 1367.08,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 28.417637915254225,
+        "governmentMonthlyPayment": 1427.66,
+        "effectiveRate": 23.354468592916344,
+        "monthlyPayment": 1410.24,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 21.492278285661783,
+        "governmentMonthlyPayment": 1386.84,
+        "effectiveRate": 17.237966392826,
+        "monthlyPayment": 1370.08,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 42.70514956036146,
+        "governmentMonthlyPayment": 1507.63,
+        "effectiveRate": 35.75727257233425,
+        "monthlyPayment": 1488.25,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 42.70514956036146,
+        "governmentMonthlyPayment": 1507.63,
+        "effectiveRate": 35.75727257233425,
+        "monthlyPayment": 1488.25,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 28.417637915254225,
+        "governmentMonthlyPayment": 1427.66,
+        "effectiveRate": 23.354468592916344,
+        "monthlyPayment": 1410.24,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.840101280587938,
+        "governmentMonthlyPayment": 1435.87,
+        "effectiveRate": 22.984624641105157,
+        "monthlyPayment": 1411.89,
+        "remainder": 0.05
+    },
+    {
+        "governmentEffectiveRate": 23.506283246523175,
+        "governmentMonthlyPayment": 1398.86,
+        "effectiveRate": 18.848021181743068,
+        "monthlyPayment": 1380.76,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 21.332327827147957,
+        "governmentMonthlyPayment": 1385.88,
+        "effectiveRate": 17.159370472648927,
+        "monthlyPayment": 1369.55,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.055584948989654,
+        "governmentMonthlyPayment": 1442.84,
+        "effectiveRate": 25.29343554010941,
+        "monthlyPayment": 1422.73,
+        "remainder": -0.04
+    },
+    {
+        "governmentEffectiveRate": 28.179519591243206,
+        "governmentMonthlyPayment": 1426.28,
+        "effectiveRate": 23.190216764219617,
+        "monthlyPayment": 1409.17,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 28.777073329177693,
+        "governmentMonthlyPayment": 1429.74,
+        "effectiveRate": 23.652605896735146,
+        "monthlyPayment": 1412.17,
+        "remainder": -0.06
+    },
+    {
+        "governmentEffectiveRate": 28.777073329177693,
+        "governmentMonthlyPayment": 1429.74,
+        "effectiveRate": 23.652605896735146,
+        "monthlyPayment": 1412.17,
+        "remainder": -0.06
+    },
+    {
+        "governmentEffectiveRate": 27.583735537656473,
+        "governmentMonthlyPayment": 1422.82,
+        "effectiveRate": 22.729093879206253,
+        "monthlyPayment": 1406.18,
+        "remainder": 0.07
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 29.647198124441807,
+        "governmentMonthlyPayment": 1434.76,
+        "effectiveRate": 24.26216889121653,
+        "monthlyPayment": 1416.1,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.647198124441807,
+        "governmentMonthlyPayment": 1434.76,
+        "effectiveRate": 24.26216889121653,
+        "monthlyPayment": 1416.1,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 29.647198124441807,
+        "governmentMonthlyPayment": 1434.76,
+        "effectiveRate": 24.26216889121653,
+        "monthlyPayment": 1416.1,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.647198124441807,
+        "governmentMonthlyPayment": 1434.76,
+        "effectiveRate": 24.26216889121653,
+        "monthlyPayment": 1416.1,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 21.492278285661783,
+        "governmentMonthlyPayment": 1386.84,
+        "effectiveRate": 17.237966392826,
+        "monthlyPayment": 1370.08,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.647198124441807,
+        "governmentMonthlyPayment": 1434.76,
+        "effectiveRate": 24.26216889121653,
+        "monthlyPayment": 1416.1,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 21.492278285661783,
+        "governmentMonthlyPayment": 1386.84,
+        "effectiveRate": 17.237966392826,
+        "monthlyPayment": 1370.08,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.71495404476425,
+        "governmentMonthlyPayment": 1435.15,
+        "effectiveRate": 24.555477985811393,
+        "monthlyPayment": 1417.99,
+        "remainder": -0.04
+    },
+    {
+        "governmentEffectiveRate": 20.928047635761125,
+        "governmentMonthlyPayment": 1383.45,
+        "effectiveRate": 16.81773206729371,
+        "monthlyPayment": 1367.27,
+        "remainder": 0.07
+    },
+    {
+        "governmentEffectiveRate": 20.928047635761125,
+        "governmentMonthlyPayment": 1383.45,
+        "effectiveRate": 16.81773206729371,
+        "monthlyPayment": 1367.27,
+        "remainder": 0.07
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 27.573419611103645,
+        "governmentMonthlyPayment": 1422.76,
+        "effectiveRate": 22.70126586874841,
+        "monthlyPayment": 1406.01,
+        "remainder": -0.07
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 29.61593378277303,
+        "governmentMonthlyPayment": 1434.58,
+        "effectiveRate": 24.068247715369328,
+        "monthlyPayment": 1414.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 22.523473493676427,
+        "governmentMonthlyPayment": 1393.01,
+        "effectiveRate": 18.07873705210341,
+        "monthlyPayment": 1375.67,
+        "remainder": -0.01
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.02727794984967,
+        "monthlyPayment": 1425.43,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.02727794984967,
+        "monthlyPayment": 1425.43,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.171806107364674,
+        "governmentMonthlyPayment": 1432.02,
+        "effectiveRate": 23.999180099828088,
+        "monthlyPayment": 1414.4,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 31.03809495576586,
+        "governmentMonthlyPayment": 1442.74,
+        "effectiveRate": 25.765401365237995,
+        "monthlyPayment": 1425.75,
+        "remainder": 0
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 27.94857264329764,
+        "governmentMonthlyPayment": 1424.94,
+        "effectiveRate": 23.148291682725496,
+        "monthlyPayment": 1408.9,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 27.94857264329764,
+        "governmentMonthlyPayment": 1424.94,
+        "effectiveRate": 23.148291682725496,
+        "monthlyPayment": 1408.9,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 22.65925856288231,
+        "governmentMonthlyPayment": 1393.82,
+        "effectiveRate": 18.197126195134715,
+        "monthlyPayment": 1376.45,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 29.435389586267657,
+        "governmentMonthlyPayment": 1433.54,
+        "effectiveRate": 24.148897565645044,
+        "monthlyPayment": 1415.37,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 23.38505375533535,
+        "governmentMonthlyPayment": 1398.14,
+        "effectiveRate": 18.728677585620424,
+        "monthlyPayment": 1379.98,
+        "remainder": -0.06
+    },
+    {
+        "governmentEffectiveRate": 23.38505375533535,
+        "governmentMonthlyPayment": 1398.14,
+        "effectiveRate": 18.728677585620424,
+        "monthlyPayment": 1379.98,
+        "remainder": -0.06
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 28.417637915254225,
+        "governmentMonthlyPayment": 1427.66,
+        "effectiveRate": 23.354468592916344,
+        "monthlyPayment": 1410.24,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.829669401266766,
+        "governmentMonthlyPayment": 1435.81,
+        "effectiveRate": 24.46570390769245,
+        "monthlyPayment": 1417.41,
+        "remainder": -0.01
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.829669401266766,
+        "governmentMonthlyPayment": 1435.81,
+        "effectiveRate": 24.46570390769245,
+        "monthlyPayment": 1417.41,
+        "remainder": -0.01
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 25.73881333096406,
+        "governmentMonthlyPayment": 1412.04,
+        "effectiveRate": 21.071066683225403,
+        "monthlyPayment": 1395.38,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 29.591620400053674,
+        "governmentMonthlyPayment": 1434.44,
+        "effectiveRate": 24.048791005163352,
+        "monthlyPayment": 1414.72,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 32.80155303506107,
+        "governmentMonthlyPayment": 1452.78,
+        "effectiveRate": 26.288778295252403,
+        "monthlyPayment": 1433.74,
+        "remainder": -0.07
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 25.422213463367328,
+        "governmentMonthlyPayment": 1410.18,
+        "effectiveRate": 20.26304956914622,
+        "monthlyPayment": 1390.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 15.042605367958206,
+        "governmentMonthlyPayment": 1347.48,
+        "effectiveRate": 11.873991140566464,
+        "monthlyPayment": 1335.94,
+        "remainder": -0.04
+    },
+    {
+        "governmentEffectiveRate": 31.416211032045638,
+        "governmentMonthlyPayment": 1444.9,
+        "effectiveRate": 25.617790296554865,
+        "monthlyPayment": 1424.8,
+        "remainder": 0.07
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 20.271043918175756,
+        "governmentMonthlyPayment": 1379.49,
+        "effectiveRate": 16.12836335748751,
+        "monthlyPayment": 1362.66,
+        "remainder": 0.06
+    },
+    {
+        "governmentEffectiveRate": 31.793269011274905,
+        "governmentMonthlyPayment": 1447.05,
+        "effectiveRate": 25.957145553195904,
+        "monthlyPayment": 1426.98,
+        "remainder": -0.05
+    },
+    {
+        "governmentEffectiveRate": 26.257358943286867,
+        "governmentMonthlyPayment": 1415.08,
+        "effectiveRate": 21.452579108699354,
+        "monthlyPayment": 1397.88,
+        "remainder": -0.05
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.793269011274905,
+        "governmentMonthlyPayment": 1447.05,
+        "effectiveRate": 25.957145553195904,
+        "monthlyPayment": 1426.98,
+        "remainder": -0.05
+    },
+    {
+        "governmentEffectiveRate": 25.422213463367328,
+        "governmentMonthlyPayment": 1410.18,
+        "effectiveRate": 20.26304956914622,
+        "monthlyPayment": 1390.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 25.422213463367328,
+        "governmentMonthlyPayment": 1410.18,
+        "effectiveRate": 20.26304956914622,
+        "monthlyPayment": 1390.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 25.422213463367328,
+        "governmentMonthlyPayment": 1410.18,
+        "effectiveRate": 20.26304956914622,
+        "monthlyPayment": 1390.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 25.422213463367328,
+        "governmentMonthlyPayment": 1410.18,
+        "effectiveRate": 20.26304956914622,
+        "monthlyPayment": 1390.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 25.422213463367328,
+        "governmentMonthlyPayment": 1410.18,
+        "effectiveRate": 20.26304956914622,
+        "monthlyPayment": 1390.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 22.986538907878074,
+        "governmentMonthlyPayment": 1395.77,
+        "effectiveRate": 18.098670787780602,
+        "monthlyPayment": 1378.98,
+        "remainder": 0.05
+    },
+    {
+        "governmentEffectiveRate": 28.31407360382132,
+        "governmentMonthlyPayment": 1427.06,
+        "effectiveRate": 22.756397078287826,
+        "monthlyPayment": 1410.37,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 31.465277112463518,
+        "governmentMonthlyPayment": 1445.18,
+        "effectiveRate": 25.66191980713901,
+        "monthlyPayment": 1425.09,
+        "remainder": -0.03
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 31.360149858705142,
+        "governmentMonthlyPayment": 1444.58,
+        "effectiveRate": 25.62454697816161,
+        "monthlyPayment": 1424.85,
+        "remainder": -0.02
+    },
+    {
+        "governmentEffectiveRate": 28.863571583616277,
+        "governmentMonthlyPayment": 1430.24,
+        "effectiveRate": 23.106169015641576,
+        "monthlyPayment": 1412.7,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 26.248819261898614,
+        "governmentMonthlyPayment": 1415.03,
+        "effectiveRate": 20.922820625377803,
+        "monthlyPayment": 1394.41,
+        "remainder": 0.04
+    },
+    {
+        "governmentEffectiveRate": 23.42882237507682,
+        "governmentMonthlyPayment": 1398.4,
+        "effectiveRate": 18.853373726173082,
+        "monthlyPayment": 1380.8,
+        "remainder": 0
+    },
+    {
+        "governmentEffectiveRate": 21.204130381637263,
+        "governmentMonthlyPayment": 1385.11,
+        "effectiveRate": 16.91452305554815,
+        "monthlyPayment": 1367.92,
+        "remainder": 0.02
+    }
+]

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" charset="iso-8859-1" src="creditcarddata.js"></script>
+    <script>
+    var creditCards = [];
+    for(var i = 0; i < creditmatrix.length - 1; i++) {
+        var curCreditCard = creditmatrix[i + 1];
+        creditCards[i] = {
+                issuer: curCreditCard[1],
+                cardname: curCreditCard[5],
+                an_ff: emptytozero(curCreditCard[6]), // Fixed annual fee for holding the credit card, always paid in advance
+                an_pf: emptytozero(curCreditCard[7]), // Percentage annual fee for holding the credit card, as percentage of the credit limit, paid in advance
+                nom_rate_purc: emptytozero(curCreditCard[8]), // Nominal interest rate for purchases (for everything unless a separate rate for cash is provided)
+                rateperiod_purc: curCreditCard[9], // The scope of the provided interest rate - month ("mnd") or year ("aar")
+                interestfree_days: emptytozero(curCreditCard[10]), // Maximum number of interest free days for purchases
+                pe_ff: emptytozero(curCreditCard[11]), // Fixed periodic fee to be paid with any downpay term, normally monthly.
+                cw_hb_bh_ff: emptytozero(curCreditCard[16]), // Fixed fee, cash withdrawal from own bank during opening hours
+                cw_hb_oh_ff: emptytozero(curCreditCard[15]), // Fixed fee, cash withdrawal from own bank outside opening hours
+                cw_ob_bh_ff: emptytozero(curCreditCard[14]), // Fixed fee, cash withdrawal from other bank during opening hours
+                cw_ob_oh_ff: emptytozero(curCreditCard[13]), // Fixed fee, cash withdrawal from other bank outside opening hours
+                cw_do_pf: emptytozero(curCreditCard[17]), // Percentage fee, domestic cash withdrawal as a percentage of the withdrawal
+                cw_eu_pf: emptytozero(curCreditCard[19]), // Percentage fee, cash withdrawal abroad as a percentage of the withdrawal (in addition to an eventual currency fee)
+                cw_eu_ff: emptytozero(curCreditCard[20]), // Fixed fee, cash withdrawal abroad (fixed sum)
+                ex_eu_pf: emptytozero(curCreditCard[21]), // Percentage exchange fee, cash withdrawal abroad (percentage)
+                pu_do_ff: emptytozero(curCreditCard[23]), // Fixed fee purchase, domestically
+                pu_eu_ff: emptytozero(curCreditCard[24]), // Fixed fee purchase abroad
+                minpay_perc: emptytozero(curCreditCard[25]), // Minimum, monthly payment as a percentage of used credit
+                minpay_units: emptytozero(curCreditCard[26]) // Minimum, monthly payment in currency units (for example NOK) 
+        };
+    }
+    
+    console.log(JSON.stringify(creditCards, null, "\t"));
+    
+    
+    function emptytozero(parameter) {
+        if (!isNaN(parameter)) return parameter;
+        else if (typeof parameter === 'undefined' || typeof nr == 'undefined' || !parameter || parameter =="" || parameter ==" ") return 0;
+    } 
+    
+    
+    </script>
+</head>
+<body>
+
+</body>
+</html>

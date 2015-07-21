@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FreeLoan SunLaan comparison tool</title>
+<script src="jquery-2.0.3.min.js"></script>
+<style>
+h4 {
+    margin-top: 60px;
+    margin-bottom: 0;
+}
+
+h4:first-child {
+    margin-top: 0;
+}
+
+.notInSet {
+    background-color: red;
+}
+
+.resultContainer > div {
+    margin-top: 30px;
+    background-color: #CCC;
+}
+
+.resultContainer > div > div:first-child {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 19px;
+}
+
+.resultsTable td, .resultsTable th {
+    padding: 3px 15px;
+    width: 183px;
+}
+
+.removeResults {
+    float: right;
+    display: block;
+}
+</style>
+
+<script type="text/javascript">
+$(function() {
+    var testDomain = "localhost:8080";
+    var base = "/services/kalkulator/";
+    
+    $("#mortgage").submit(function() {
+        var url = getMortgageLink($(this).serialize());
+        compareJsons(url, "boliglan", doDiffMortgages);
+        return false;
+    });
+    
+    $("#smallLoan").submit(function() {
+        var url = getSmallLoanLink($(this).serialize());
+        compareJsons(url, "smalan", doDiffSmallLoans);
+        return false;
+    });
+    
+    $("#creditCard").submit(function() {
+        var url = getCreditCardLink($(this).serialize());
+        compareJsons(url, "kredittkort", doDiffCreditCards);
+        return false;
+    });
+    
+    
+    function getMortgageLink(formValues) {
+        return base +
+             "boliglan?howManyRoads=" + new Date().getTime() + "&kalkulatortype=laan&laan_type=bolig" +
+             "&rente=flytende_rente&rentebindingAr=&avdragsfrihet=utenAvdragsfrihet&avdragsfrihetAr=&standardlan=ja&rammelan=ja&forstehjemslan=ja&rentetak=ja" +
+             "&visProduktpakker=ja&visUtenProduktpakker=ja&nasjonalt=ja&regionalt=ja&fastrente1_3=ja&fastrente3_5=ja" +
+             "&fastrente5_10=ja&fastrente10=ja&" + formValues;
+    }
+    
+    
+    function getSmallLoanLink(formValues) {
+        return base + "smalan?howManyRoads=" + new Date().getTime() + "&kalkulatortype=laan&billan=ja&billankaskofritt=ja&sikretBillan=ja&klimaBillan=ja" + 
+                "&under7mBatlan=ja&over7mBatlan=ja&forbrukslan=ja&visProduktpakker=ja&visUtenProduktpakker=ja&nasjonalt=ja&regionalt=ja&" + formValues;
+    }
+    
+    function getCreditCardLink(formValues) {
+        return base + "kredittkort?howManyRoads=" + new Date().getTime() + "&kalkulatortype=kredittkort&populertBruksmonster=&populertGrunndata=" +
+                "&uttak_egen_bank_i_apningstid=0&uttak_egen_bank_etter_apningstid=1&uttak_annen_bank_i_apningstid=0&uttak_annen_bank_etter_apningstid=0" +
+                "&uttak_butikk=0&varekjop=10&uttak_utland=1&varekjop_utland=3&reiseforsikring=ja&andreFordeler=ja&visProduktpakker=ja&visUtenProduktpakker=ja" +
+                "&nasjonalt=ja&regionalt=ja&" + formValues;
+    }
+    
+    
+    
+    function compareJsons(url, product, diffFunction) {
+        var protocol = "http://";
+        var productionData = null;
+        var testData = null;
+        
+        $(".resultContainer").empty();
+        
+        $.getJSON(protocol + testDomain + base + product + "/foreign?url=" + encodeURIComponent(url), function(data) {
+            productionData = data;
+            if(testData != null) {
+                diffFunction(productionData, testData, product);
+            }
+        });
+        
+        $.getJSON(protocol + testDomain + url, function(data) {
+            testData = data;
+            if(productionData != null) {
+                diffFunction(productionData, testData, product);
+            }
+        });
+    }
+    
+    function doDiffMortgages(productionData, testData, product) {
+        doDiff(productionData, testData, "mortgageResults", product, "effektivRente", "mndbelop", "totalkostnad");
+    }
+    
+    function doDiffSmallLoans(productionData, testData, product) {
+        doDiff(productionData, testData, "smallLoanResults", product, "effektivRente", "mndBelop", "totaleKostnader");
+    }
+    
+    function doDiffCreditCards(productionData, testData, product) {
+        doDiff(productionData, testData, "creditCardResults", product, "effektiv_rente", "mndBelop", "totaltInnbetalt");
+    }
+    
+    function doDiff(productionData, testData, resultDivId, product, effInterestRate, monthlyPayment, totalPayment) {
+        
+        var testMap = {};
+        
+        $.each(testData.data, function () {
+            testMap[getProductId(this[product].href)] = this;
+        });
+        
+        $.each(productionData.data, function () {
+            var id = getProductId(this[product].href);
+            var $container = addResultContainer(resultDivId, this[product].produktnavn, id);
+            if(!(id in testMap)) {
+                notInTestResultSet($container);
+            } else {
+                testProduct = testMap[id];
+                
+                var $tbody = addResultHeader($container);
+                
+                if(product != "kredittkort") {
+	                var totalMonthCountThis = getTotalMonthCount(this["lopetidAr"], this["lopetidMnd"]);
+	                var totalMonthCountTest = getTotalMonthCount(testProduct["lopetidAr"], testProduct["lopetidMnd"]);
+                }
+                
+                var thisNominalPercentage = null;
+                var testNominalPercentage = null;
+                var nominellRente = "nominellRente";
+                
+                
+                if(nominellRente in this) {
+                    thisNominalPercentage = this[nominellRente];
+                    testNominalPercentage = testProduct[nominellRente];
+                } else if (nominellRente in this[product]) {
+                    thisNominalPercentage = this[product][nominellRente];
+                    testNominalPercentage = testProduct[product][nominellRente];
+                }
+                
+                if(thisNominalPercentage != null) {
+                    addResultRow($tbody, "Nominal percentage", formatNumber(thisNominalPercentage), formatNumber(testNominalPercentage));
+                }
+                
+                addResultRow($tbody, "Effective interest rate", formatNumber(this[effInterestRate]), formatNumber(testProduct[effInterestRate]));
+                if(product != "kredittkort") {
+                    addResultRow($tbody, "Months to pay", totalMonthCountThis, totalMonthCountTest);
+                }
+                addResultRow($tbody, "Monthly payment", formatNumber(this[monthlyPayment]), formatNumber(testProduct[monthlyPayment]));
+                addResultRow($tbody, "Total payment", formatNumber(this[totalPayment]), formatNumber(testProduct[totalPayment]));
+                
+                delete testMap[id];
+            }
+        });
+        
+        $.each(testMap, function (id, value) {
+            $container = addResultContainer(resultDivId, value[product].produktnavn, id);
+            notInProductionResultSet($container);
+        });
+    }
+    
+    function getTotalMonthCount(yearCount, monthCount) {
+        return parseInt(yearCount) * 12 + parseInt(monthCount);
+    }
+    
+    function addResultContainer(divId, productName, productId) {
+        var $container = $("<div>").append($("<div>").text("Name: " + productName + "; Id: " + productId));
+        $container.append($("<a>").attr("href", "#").addClass("removeResults").text("Remove all results"));
+        $("#" + divId).append($container);
+        return $container;
+    }
+    
+    function addResultHeader($container) {
+        $table = $("<table>").addClass("resultsTable").append(
+                      $("<tbody>").append(
+                              $("<tr>").append($("<th>").text("Property")
+                                      ).append($("<th>").text("Production")
+                                      ).append($("<th>").text("Test")
+                                      ).append($("<th>").text("Difference"))));
+        $container.append($table);
+        return $table.find("tbody");
+    }
+    
+    function addResultRow($tbody, propertyName, productionValue, testValue) {
+        $row = $("<tr>")
+        $row.append($("<td>").text(propertyName));
+        $row.append($("<td>").text(toFixed(productionValue)));
+        $row.append($("<td>").text(toFixed(testValue)));
+        $row.append($("<td>").text(toFixed(productionValue - testValue)));
+        $tbody.append($row);
+    }
+    
+    function toFixed(value) {
+        return parseFloat(value).toFixed(3);
+    }
+    
+    function notInTestResultSet($container) {
+        notInSet($container, "Not in a test result set");
+    }
+    
+    function notInProductionResultSet($container) {
+        notInSet($container, "Not in a production result set");
+    }
+    
+    function notInSet($container, text) {
+        $container.append($("<div>").addClass("notInSet").text(text));
+    }
+    
+    function formatNumber(number) {
+        return number.replace(",", ".").replace(/\s|%/g, "");
+    }
+    
+    function getProductId(url) {
+        var regexp = /\d+$/;
+        return "$" + regexp.exec(url);
+    }
+    
+    
+    
+    $(document).on("click", ".removeResults", function () {
+        $(".resultContainer").empty();
+    });
+    
+});
+</script>
+
+</head>
+<body>
+    <h4>Boliglån</h4>
+    <form action="" method="GET" id="mortgage">
+        <div class="calcInput">
+            <div>
+                Lånebeløp <input type="text" name="lanebelop">
+            </div>
+            <div>
+                Boligverdi <input type="text" name="kjopesum">
+            </div>
+            <div>
+                <input type="radio" name="lopetidtermin" value="m_lopetid" checked="checked">Løpetid <input type="radio" value="m_terminbelop"
+                    name="lopetidtermin">Terminbeløp
+            </div>
+            <div>
+                <input type="text" name="lopetidtermin_value">
+            </div>
+            <div>
+                <input type="radio" checked="checked" value="annuitet" name="nedbetaling"> Annuitet
+                <input type="radio" value="serie" name="nedbetaling"> Serie
+            </div>
+            <div>
+                Alde (frivillige felt) <input type="text" name="alderstilbudAr"> <input type="checkbox" value="ja" name="pensjonist"> Pensjonist
+            </div>
+            <div>
+                <input type="submit" value="Sammenlign">
+            </div>
+        </div>
+    </form>
+
+    <div id="mortgageResults" class="resultContainer"></div>
+
+    
+    <h4>Smålån</h4>
+    <form action="" method="GET" id="smallLoan">
+        <div class="calcInput">
+            <div>
+                Jeg vil låne til
+                <select name="lanetype">
+                    <option value="bil">Ny bil</option>
+                    <option value="bat">Ny båt</option>
+                    <option value="caravan">Ny caravan</option>
+                    <option value="mc">Ny MC</option>
+                    <option value="forbruk">Annet</option>
+                </select>
+            </div>
+            <div>
+                Lånebeløp <input type="text" name="lanebelop">
+            </div>
+            <div>
+                Kjøpesum <input type="text" name="kjopesum">
+            </div>
+            <div>
+                <input type="radio" value="m_lopetid" name="lopetidtermin" checked="checked"> Løpetid
+                <input type="radio" value="m_terminbelop" name="lopetidtermin"> Terminbeløp
+            </div>
+            <div>
+                <input type="text" name="lopetidtermin_value">
+                <select name="periode">
+                    <option value="Måneder">Måneder</option>
+                    <option value="År">År</option>
+                </select>
+            </div>
+            <div>
+                Alder (frivillige felt)
+                <input type="text" name="alderstilbudAr">
+                <input type="checkbox" name="student" value="ja"> Student
+            </div>
+            <div>
+                <input type="submit" value="Sammenlign">
+            </div>
+        </div>
+
+        <div id="smallLoanResults" class="resultContainer"></div>
+    </form>
+
+
+
+    <h4>Kredittkort</h4>
+    <form action="" method="GET" id="creditCard">
+        <div class="calcInput">
+            <div>
+                Beløp pr gang <input type="text" name="grunndata_belop">
+            </div>
+            <div>
+                <input type="radio" value="m_lopetid" name="lopetidtermin" checked="checked"> Løpetid
+                <input type="radio" value="m_terminbelop" name="lopetidtermin"> Terminbeløp
+            <div>
+                <input type="text" name="lopetidtermin_value">
+            </div>
+            </div>
+            <div>
+                Din bruttoinntekt (frivillige felt) <input type="text" name="inntekt">
+            </div>
+            <div>
+                <input type="submit" value="Sammenlign">
+            </div>
+        </div>
+    </form>
+
+    <div id="creditCardResults" class="resultContainer"></div>
+</body>
+</html>

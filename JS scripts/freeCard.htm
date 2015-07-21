@@ -1,0 +1,3555 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>freeCard</title>
+<script type="text/javascript" charset="iso-8859-1" src="creditcarddata.js"></script>
+<script> 
+<!--
+
+
+
+/* 		
+
+                                                                                                            
+                                                                                                                                                        dddddddd
+    ffffffffffffffff                                                                      CCCCCCCCCCCCC                                                 d::::::d
+   f::::::::::::::::f                                                                  CCC::::::::::::C                                                 d::::::d
+  f::::::::::::::::::f                                                               CC:::::::::::::::C                                                 d::::::d
+  f::::::fffffff:::::f                                                              C:::::CCCCCCCC::::C                                                 d:::::d 
+  f:::::f       ffffffrrrrr   rrrrrrrrr       eeeeeeeeeeee        eeeeeeeeeeee     C:::::C       CCCCCC  aaaaaaaaaaaaa  rrrrr   rrrrrrrrr       ddddddddd:::::d 
+  f:::::f             r::::rrr:::::::::r    ee::::::::::::ee    ee::::::::::::ee  C:::::C                a::::::::::::a r::::rrr:::::::::r    dd::::::::::::::d 
+ f:::::::ffffff       r:::::::::::::::::r  e::::::eeeee:::::ee e::::::eeeee:::::eeC:::::C                aaaaaaaaa:::::ar:::::::::::::::::r  d::::::::::::::::d 
+ f::::::::::::f       rr::::::rrrrr::::::re::::::e     e:::::ee::::::e     e:::::eC:::::C                         a::::arr::::::rrrrr::::::rd:::::::ddddd:::::d 
+ f::::::::::::f        r:::::r     r:::::re:::::::eeeee::::::ee:::::::eeeee::::::eC:::::C                  aaaaaaa:::::a r:::::r     r:::::rd::::::d    d:::::d 
+ f:::::::ffffff        r:::::r     rrrrrrre:::::::::::::::::e e:::::::::::::::::e C:::::C                aa::::::::::::a r:::::r     rrrrrrrd:::::d     d:::::d 
+  f:::::f              r:::::r            e::::::eeeeeeeeeee  e::::::eeeeeeeeeee  C:::::C               a::::aaaa::::::a r:::::r            d:::::d     d:::::d 
+  f:::::f              r:::::r            e:::::::e           e:::::::e            C:::::C       CCCCCCa::::a    a:::::a r:::::r            d:::::d     d:::::d 
+ f:::::::f             r:::::r            e::::::::e          e::::::::e            C:::::CCCCCCCC::::Ca::::a    a:::::a r:::::r            d::::::ddddd::::::dd
+ f:::::::f             r:::::r             e::::::::eeeeeeee   e::::::::eeeeeeee     CC:::::::::::::::Ca:::::aaaa::::::a r:::::r             d:::::::::::::::::d
+ f:::::::f             r:::::r              ee:::::::::::::e    ee:::::::::::::e       CCC::::::::::::C a::::::::::aa:::ar:::::r              d:::::::::ddd::::d
+ fffffffff             rrrrrrr                eeeeeeeeeeeeee      eeeeeeeeeeeeee          CCCCCCCCCCCCC  aaaaaaaaaa  aaaarrrrrrr               ddddddddd   ddddd
+                                                                                                                                                                
+                                                                                                                                                                
+                                                                                            
+
+
+freeCard 1.0 - loan functions for credit cards made for Finansportalen.no by Jon Erland Madsen.	
+
+
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+<<<<<<< ++++|++++ >>>>>>  		DERVIATION OF FORMULAS USED IN FREECARD					 	<<<<<<< ++++|++++ >>>>>>
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+//////////////////////////		DERIVATION OF A FORMULA FOR ANNUITY-IMMDEIDATE		////////////////////////////////////////////////
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+
+ANNUITY IMMEDIATE (OR ORDINARY ANNUITIES) PAID AT THE END OF EACH PERIOD
+ 
+"An annuity is a terminating "stream" of fixed payments, i.e., a collection of payments to be periodically made over a specified period of 
+time" (Wikipedia). 
+
+The fixed payments contain both an interest part and an installment part, but as the loan is gradually repaid on each interest due date, the 
+installment share of each annuity grows and the interest share shrinks.
+
+"If the payments are made at the end of the time periods, so that interest is accumulated before the payment, the annuity is called an 
+annuity-immediate, or ordinary annuity "(Wikipedia).
+
+The derivation below applies to ordinary annuities.
+
+
+NOTATION / ASSUMPTIONS
+
+
+It will be easier to read the expressions when we use the short form of the variable names:
+
+
+|*******************************************************************************|
+|				| Symbol		| Variable name		|
+|_______________________________|_______________________|_______________________|
+| Loan, original principal *	| PV			| loan			|
+| Nominal, term interest rate	| r			| rate			|
+| Number of payments		| n			| termnumber		|
+| Periodical payment		| a			| annuity		|
+|				|			|			|
+|*******************************************************************************|
+
+
+* The bank computes the annuity out of your original debt to the bank - the principal at the start of the loan. This might deviate
+from the amount you actually receive. Fees could make up the difference. 
+
+The present value of a loan is smaller than the sum of your payments, as a dollar paid later feels less painful than one paid now. This is why
+borrowers are willing to pay more back than they receive. Lenders are willing to wait for their money, provided they receive more later.
+
+The word "annuity" implies annual payments. But monthly payments are more common now, and "math-wise" the length of the periods is irrelevant. 
+All that we demand, is that the periods have the same length (or, to be very precise - that the periodical interes rate is the same for all
+periods).
+
+If the annual interest rate is 5%, the present value of an annuity 'a' payable in one year is PV = a/1,05
+
+The present value of this annuity plus a similar annuity payable in two years will be PV = a/1,05 + a/(1,05)^2
+
+We use '^' as notation for "in the power of", as in Excel spreadsheets.
+
+(This math procedure, dividing each term with a growth factor, is called "to discount").
+
+We imagine the interest rate 'r' on decimal form, so that five percent is written 0,05. Generally, the growth factor is written '(1+r)'
+
+We presume annuity-immediate, so that the first payment is made at the end of the first period. Hence, we have no zero term, as you
+often have in Math books' examples.
+
+
+
+ANNUITY FORMULA
+
+We formulate the sequence of payments thus, saying that the present value is the sum of all the discounted payments. In this general 
+case, we don't know exactly how many terms there are, so we leave a gap in the middle: 
+ 
+
+I	PV = a/(1+r) + a/((1+r)^2) + a/((1+r)^3) + .. + a/((1+r)^n)
+
+
+All terms on the right hand side have a common growth factor, '1/(1+r)'. In order to make the expressions more easy to read, we introduce 
+the variable 'k':
+
+
+k = 1/(1+r)
+
+We substitue 'k' for '1/(1+r)':
+
+
+I	PV = a*k + a*k^2 + a*k^3 + .. + a*k^n
+
+
+We introduce a second equation, similar to the first, but where we have multiplied all terms by 'k':
+
+
+II	PV*k = a*k^2 + a*k^3 + a*k^4 + .. + a*k^(n+1)
+
+
+We subtract II from I. Many of the terms of the two sequences are the same and disappear. We are left with:
+
+
+PV - PV*k = a*k - a*k^(n+1)
+
+
+This expression can be rearranged, here with respect to the annuity 'a':
+
+=>	PV (1 - k) = a (k - k^(n+1))
+
+=>	PV = a (k - k^(n+1))/(1 - k)
+
+=>	a = PV (1 - k)/(k - k^(n+1))
+
+In javascript notation:
+
+a = PV * (1 - k) / (k - Math.pow(k,n+1));	
+
+
+WHen we subsitute the symbols for the variable names in the table above, we get:
+
+
+annuity = loan * (1 - k) / (k - Math.pow(k,termnumber+1));
+
+	
+
+
+
+*********************************************************************************
+|										|
+|	FORMULA FOR ANNUITY-IMMEDIATE:						|
+|										|
+|										|
+|	annuity = loan * (1 - k) / (k - Math.pow(k,termnumber+1));		|
+|										|
+|										|
+|	where									|
+|										|
+|										|
+|	k = 1/(1+rate);								|
+|										|
+|										|
+*********************************************************************************
+
+
+
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+//////////////////////////		(END - DERIVATION OF A FORMULA FOR ANNUITY-IMMDEIDATE)		 ///////////////////////////////////////
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+//////////////////////////		DERIVATION OF A FORMULA FOR ANNUITY-DUE			////////////////////////////////////////////////
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+
+ANNUITY-DUE - WHERE THE ANNUITIES ARE PAID IN ADVANCE - AT THE BEGINNING OF EACH PERIOD
+ 
+Important: This is NOT a formula for interest paid in advance. For definitions, see derivation of annuity-immediate. The difference from 
+annuity-immediate is that the first period is period zero (the moment we receive the loan). There is no interest on this first payment.
+
+
+ANNUITY FORMULA
+
+
+PV -> The present value of an annuity-due payment stream (when we compute effective interest rate, the present value is the initil size of the loan).
+a  -> The annuity in an annuity-due stream
+r  -> The periodic interest rate
+n  -> Number of payment periods
+
+We formulate the sequence of payments thus, saying that the present value is the sum of all the discounted payments. In this general 
+case, we don't know exactly how many terms there are, so we leave a gap in the middle. The first payment shall not be discounted, as no time
+has passed and no interest accured yet.
+
+In order for the loan to run 'n' periods, since we start in period zero, the last payment happens in period 'n-1':
+ 
+
+I	PV = a + a/(1+r) + a/((1+r)^2) + a/((1+r)^3) + .. + a/((1+r)^(n-1))
+
+
+All terms on the right hand side have a common growth factor, '1/(1+r)'. In order to make the expressions more easy to read, we introduce 
+the variable 'k':
+
+k = 1/(1+r)
+
+We substitue 'k' for '1/(1+r)':
+
+
+I	PV = a + a*k + a*k^2 + a*k^3 + .. + a*k^(n-1)
+
+
+We introduce a second equation, similar to the first, but where we have multiplied all terms by 'k':
+
+
+II	PV*k = a*k + a*k^2 + a*k^3 + a*k^4 + .. + a*k^n
+
+
+We subtract II from I. Many of the terms of the two sequences are the same and disappear. We are left with:
+
+
+I - II	PV - PV*k = a - a*k^n
+
+
+This expression can be rearranged:
+
+
+=>	PV * (1 - k) = a * (1 - k^n)
+
+=> 	PV = a * (1 - k^n)/(1 - k)
+
+=>	a = PV * (1 - k)/(1 - k^n)
+
+
+In javascript notation:
+
+
+PV = a * (1 - Math.pow(k,n))/(1 - k); 
+
+a = PV * (1 - k) / (1 - Math.pow(k,n));	
+
+
+
+*********************************************************************************
+|										|
+|	FORMULA FOR ANNUITY-DUE:						|
+|										|
+|										|
+|	annuity = loan * (1 - k) / (1 - Math.pow(k,termnumber));		|
+|										|
+|										|
+|	where									|
+|										|
+|										|
+|	k = 1/(1+rate);								|
+|										|
+|										|
+*********************************************************************************
+
+
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+//////////////////////////		(END - DERIVATION OF A FORMULA FOR ANNUITY-DUE)  		 ///////////////////////////////////////
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+
+
+
+
+
+
+
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+<<<<<<< ++++|++++ >>>>>>  		(END - DERVIATION OF FORMULAS USED IN FREELOAN)				 	<<<<<<< ++++|++++ >>>>>>
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+<<<<<<< ++++|++++ >>>>>> 		COMMON FUNCTIONS								<<<<<<< ++++|++++ >>>>>>
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+
+
+
+
+function roundoff(number, direction, presision)
+{
+/*
+
+Rounds 'nummber' according to the parameters 'presision' and 'direction':
+
+direction =>	0, false or absent: Normal rounding rules apply 1: Rounds up 2: Rounds down
+presision =>	0, false or absent: Rounds to two decimals 1: Rounds to integer
+
+*/
+
+var roundfact;
+
+if (!presision || presision == 0) roundfact = 100; else roundfact = 1;
+
+if (direction == 1) return Math.ceil(number*roundfact)/roundfact;
+
+else if (direction == 2) return Math.floor(number*roundfact)/roundfact;
+
+else return Math.round(number*roundfact)/roundfact;
+
+/* END function roundoff() */}
+
+
+
+
+
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+<<<<<<< ++++|++++ >>>>>>  		(END - COMMON FUNCTIONS)							<<<<<<< ++++|++++ >>>>>>
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+<<<<<<< ++++|++++ >>>>>> 		EFFECTIVE INTEREST RATE								<<<<<<< ++++|++++ >>>>>> 		 	
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+
+
+
+
+
+
+
+function rateAnnuity(received, calculation_periods, paymentarray, highest_segment, residue, capitalization_freq, guessrate, advance )
+{
+/*
+
+WHAT THE FUNCTION DOES:
+
+For an ordered stream of payments in the array 'paymentarray', the function computes the effective, annual interest rates through iterations.
+
+The function returns one single number - the effective, annual interest rate in the common format: 3,521% pro anno -> 3.521
+
+
+PARAMETERS:
+
+received		-> The loan amount the borrower actually receives, net origination (start) fees.
+calculation_periods	-> The total number of periodic payments the loan spans.
+paymentarray 		-> Array containing all payments of the loan in each interval of the loan (an interval normally spans many payment terms) 
+
+	paymentarray[x][0] 	-> payment	 			Net periodic payment, exclusive of fees, rounded
+	paymentarray[x][1] 	-> number of payment terms; 		The number of periods these payments are valid for
+	paymentarray[x][2] 	-> periodic fee 			Practical to have here
+	paymentarray[x][3] 	-> adjusted lower segment limit 	Since the number of periods must be and integer, you rarely hit the segment limit accurately. The next segments limits must be adjusted accordingly.
+	paymentarray[x][4] 	-> upper segment limit		
+	paymentarray[x][5] 	-> remainder; 				Fractions of cents we pay to little or too much each time due to rounding // OBSOLETE/ UNNECESSARY?
+
+residue			-> Due to rounding errors, a small amount could be due or outstanding at the end of the loan payment period.
+highest_segment		-> The number of the highest 'x' in paymentarray that contains data.
+capitalization_freq	-> How many times each year the loan is capitalized. 12 (monthly) is most common, but other frequencies are supported.
+guessrate 		-> The iterations need an interest rate to start with. A guess for the periodic interest rate in decimal form
+advance			-> When 'true', the terms are payed in advance ("Annuity due"). Otherwise, payments in arrears - ordinary annuities
+
+
+We apply the annuity formula:
+
+
+1) ANNUITY-IMMEDIATE
+
+(When 'advance == false')
+
+
+*********************************************************************************
+|										|
+|	FORMULA FOR ANNUITY-IMMEDIATE:						|
+|										|
+|										|
+|	annuity = loan * (1 - k) / (k - Math.pow(k,termnumber+1));		|
+|										|
+|										|
+|	where									|
+|										|
+|										|
+|	k = 1/(1+rate);								|
+|										|
+|										|
+*********************************************************************************
+
+We want to compute 'rate'.
+
+We use other variable names:
+
+payment = principal * (1 - k) / (k - Math.pow(k,calculation_periods+1));	
+
+We rearrange it with respect to 'principal':
+
+payment/principal =  (1 - k) / (k - Math.pow(k,calculation_periods+1));
+
+=> principal * (1-k) = payment * (k - Math.pow(k,calculation_periods+1));
+
+=> principal = payment * (k - Math.pow(k,calculation_periods+1))/ (1-k);
+
+We want the right hand expression to be a present value equal to 'principal'. For computation purposes, we thus call the principal 'PV':
+
+PV = payment * (k - Math.pow(k,calculation_periods+1))/ (1-k);
+
+We formerly computed the values for the array 'interval_data'. This array is two-dimentional. In each row (representing a rate segement) the
+three first elements contain:
+
+interval_data[i][0] -> annuity
+interval_data[i][1] -> the number of payments in this interval
+interval_data[i][2] -> periodic fee in the segment
+
+For each interval/step we shall now compute the present value of the stream of payments from the beginning to the end of the interval.
+
+We do that by subtracting the present value of one stream of payments from another:
+
+
+1) A strem of payments with the current periodical amount running from the first payment in the loan to the last payment in the interval:
+
+payment * (k - Math.pow(k,interval_end+1))/ (1-k)
+
+2) Minus a strem of payments with the same amount running from the first payment in the loan to the first payment in the interval:
+
+payment * (k - Math.pow(k,interval_start+1))/ (1-k)
+
+
+The present value of the payment stream from the beginning to the end of the interval transpires by subtracting the second expression from the first:
+
+PV = payment * (k - Math.pow(k,interval_end+1))/ (1-k) - payment * (k - Math.pow(k,interval_start+1))/ (1-k)
+
+We simplify:
+
+=> PV = (payment * k - payment * Math.pow(k,interval_end+1) - payment * k + payment * Math.pow(k,interval_start+1))/ 1-k
+
+The terms 'payment * k' falls against each other, and we get:
+
+=> (payment * Math.pow(k,interval_start+1) - payment * Math.pow(k,interval_end+1)) / 1-k
+
+We can isolate 'payment / (1 - k)':
+
+PV = (payment/(1-k)) * (Math.pow(k,interval_start+1) - Math.pow(k,interval_end+1));
+
+'k' (the discount factor) is the unknown entity in our expression. The other variables are known.
+
+
+
+ 
+2) ANNUITY-DUE
+
+(When 'advance == true')
+
+*********************************************************************************
+|										|
+|	FORMULA FOR ANNUITY-DUE:						|
+|										|
+|										|
+|	annuity = loan * (1 - k) / (1 - Math.pow(k,termnumber));		|
+|										|
+|										|
+|	where									|
+|										|
+|										|
+|	k = 1/(1+rate);								|
+|										|
+|										|
+*********************************************************************************
+
+
+We reason the same way as for annuity-immediate, but use the annuity-due formula
+
+PV = payment * (1 - Math.pow(k,termnumber))/(1 - k);
+
+So that our present value becomes:
+
+PV = payment * (1 - Math.pow(k,interval_end))/ (1-k) - payment * (1 - Math.pow(k,interval_start))/ (1-k)
+
+And the algebra:
+
+PV = payment/(1-k) - payment * Math.pow(k,interval_end)/(1-k) - payment/(1-k) + payment * Math.pow(k,interval_start)/(1-k)
+
+The first and third term falls, leaving:
+
+PV = payment * Math.pow(k,interval_start)/(1-k) - payment * Math.pow(k,interval_end)/(1-k)
+
+Common factor payment/(1-k) put ouside:
+
+PV = payment/(1-k) * (Math.pow(k,interval_start) -  Math.pow(k,interval_end))
+
+
+
+
+************************************************************************************************************************************************
+
+
+
+NEWTON'S METHOD - DIFFERENTIATION
+
+No formula gives us the effective interest rate directly. We find it by trying a likely value for 'k', adjusting it until we get the interest
+rate with the accuracy we want. Newton's method shortens this try and fail process. It postulates that our 'k' will be found close to where the
+tangent to the curve in the present PV/k point crosses the k-axes: 
+
+http://en.wikipedia.org/wiki/Newton%27s_method
+
+The graph is in the PV/k space. A value of 'k' will give a value of 'PV': PV = f(k).
+
+The steepness of the tangent line is given by the differentiated function with respect to 'k':
+
+PV = (payment/(1-k)) * (Math.pow(k,interval_start+1) - Math.pow(k,interval_end+1));
+
+For easier differentiation, we handle the two expressions on each side of the multiplication sign separately. We call them 'A' and 'B';
+
+PV = A*B; where
+
+A = payment/(1-k);
+
+B = Math.pow(k,interval_start+1) - Math.pow(k,interval_end+1);
+
+One can find the differentiation rules on wikipedia: http://en.wikipedia.org/wiki/Differentiation_rules
+
+PV' = A'*B + A*B'	
+
+We fist differietiate 'A' separately according to the Quotient rule:
+
+A' = (payment' * (1-k) - payment* (1-k)') / (1-k)^2
+
+The differntiated of the constant 'payment' is 0. The differentiated of the variable 'k' er 1:
+
+=> A' = - payment* (1-k)' / (1-k)^2
+
+=> A' = payment / Math.pow(1-k,2)
+
+Then we differentiate 'B' according to the Power rule (y = x^n => y' = n*x^(n-1)):
+
+B = Math.pow(k,interval_start+1) - Math.pow(k,interval_end+1);
+
+B' = (interval_start+1)*Math.pow(k,interval_start) - (interval_end+1) * Math.pow(k,interval_end)
+
+We then assemble the whole differentiated PV according to the Product rule:
+
+PV' = (payment / Math.pow(1-k,2)) * (Math.pow(k,interval_start+1) - Math.pow(k,interval_end+1)) + (payment/(1-k))*((interval_start+1)*Math.pow(k,interval_start) - (interval_end+1) * Math.pow(k,interval_end));
+
+As there is no notation for the differentiated in the programming language, we rename the differentiated PV' 'PV_dif':
+
+PV_dif = PV' 
+
+
+
+ANNUITY-DUE
+
+
+(When 'advance == true')
+
+We reason the same way:
+
+PV = payment/(1-k) * (Math.pow(k,interval_start) -  Math.pow(k,intervallslutt))
+
+A = payment/(1-k);
+
+B = Math.pow(k,interval_start) -  Math.pow(k,interval_end);
+
+One can find the differentiation rules on wikipedia: http://en.wikipedia.org/wiki/Differentiation_rules
+
+PV' = A'*B + A*B'	
+
+We fist differietiate 'A' separately according to the Quotient rule:
+
+A' = (payment' * (1-k) - payment* (1-k)') / (1-k)^2
+
+Den dervierte av konstanten 'payment' er 0. Den deriverte av variablen 'k' er 1:
+
+=> A' = - payment* (1-k)' / (1-k)^2
+
+=> A' = - payment / Math.pow(1-k,2)
+
+Then we differentiate 'B' according to the Power rule:
+
+B = Math.pow(k,interval_start) - Math.pow(k,interval_end);
+
+B' = interval_start * Math.pow(k,interval_start-1) - interval_end * Math.pow(k,interval_end-1)
+
+We then assemble the whole differentiated PV' according to the Product rule:
+
+PV' = (payment / Math.pow(1-k,2)) * (Math.pow(k,interval_start) - Math.pow(k,interval_end)) + (payment/(1-k))*(interval_start*Math.pow(k,interval_start-1) - interval_end * Math.pow(k,interval_end-1));
+
+As there is no notation for the differentiated in the programming language, we rename the differentiated PV' 'PV_dif':
+
+PV_dif = PV' 
+
+************************************************************************************************************************************************
+
+
+
+ITERATIONS:
+
+
+We have two, pretty much identical, alternative while-loops for computing annuity-due and annuity-immediate, respectively. Instead, we could have
+performed frequent if-test inside the loops, but this would probably have impaired performance more.
+
+When the function is called, at least one nominal interest rate will be among the parameters - the rate in the lowest segment. We skal use this 
+rate as our first guess as to what the effective interest rate might be.
+
+THe function does not use interest rate directly, only via the discount factor 'k' */
+
+
+	var k = 1 / (1+guessrate/100); 	// First suggestion: The array 'price_storage' is a parameter to the function
+	var rounds = 0;	// Counts the number of iterations
+	var PV = 0;	// The present value
+	var PV_dif = 0;	// the differiented of the present value
+	var payment;
+	var y = 1; 	// 'y' is the function value that we want to make close to '0'. Givaen av value so we can enter the 'while'-loop.
+
+	var interval_start;	// The number of payments from the start of the loan period until the interval starts
+	var interval_end;	// The number of payments from the start of the loan period until the interval ends
+
+
+
+
+
+	if (advance) 	// ANNUITIES IN ADVANCE: Annuities paid at the beginning of each period - annuity-due:
+
+		{
+
+		while (Math.abs(y) > 0.000001 && rounds<100)	// Here, we set the accuracy we want.
+			{
+
+			PV = 0;		// The present value of the payments
+			PV_dif = 0;	// The differentiated of the present value
+		
+			interval_start = 0;
+			interval_end = 0;
+
+			
+			/* Now, we compute the present value 'PV' and the corresponding differetiated 'PV_dif' for each interval of the loan, given the 
+			current guess for the discount factor 'k.
+
+			In the case where the loan runse with different interest rates in succeeding intervals, we sum the present value for each. We 
+			also sum their differentiated values. */
+
+			for (i=highest_segment;i>0;i--) 
+				{
+
+				/* In order to compute the effective interest rate, we must compare all we pay with all we receive. Hence, we must 
+				include eventual fees in the periodic payments. The fee is in 'paymentarray[i][2]': */
+
+
+				payment = eval(paymentarray[i][0])+eval(paymentarray[i][2]);
+
+				interval_start = interval_end;	// The end of the former interval is the start of this
+
+				interval_end += paymentarray[i][1]; 	// The upper limit of this interval
+							
+				PV += payment/(1-k) * (Math.pow(k,interval_start) -  Math.pow(k,interval_end));
+
+				/* The sum of the differentiated of two functions is the sum of the difrentiated. Hence, we simply sum the 
+				differentiated in each interval */
+			
+				PV_dif += (payment / Math.pow(1-k,2)) * (Math.pow(k,interval_start) - Math.pow(k,interval_end)) + (payment/(1-k)) * (interval_start * Math.pow(k,interval_start-1) - interval_end * Math.pow(k,interval_end-1));
+
+					
+				}
+		
+			/* One payment - the residue - is so far missing. We add the present value of the residue to the present value of
+			the other payments. If it is paid in the last period, it must be discounted to find the present value.
+			The residue is already rounded. In annuity-due (annuities in advance) the last payment is in period 'calculation_periods-1': */
+
+
+				PV += residue * Math.pow(k,calculation_periods-1); 
+
+
+			/* We also want to add the differentiated of the residue to the differiented of the other payments. 
+
+			The residue is a function of 'k', and we use the Power rule (http://en.wikipedia.org/wiki/Power_rule): 
+
+			y = x^n => y' = n*x^(n-1): 
+
+			PV_res = residue*Math.pow(k,calculation_periods-1) => PV_res_dif = residue*(calculation_periods-1)*Math.pow(k, calculation_periods-2);
+
+		 	*/
+
+
+		
+				PV_dif += residue * (calculation_periods -1) * Math.pow(k, calculation_periods-2);	
+	
+				y = PV-received;				// Searching for a 'k' making y = 0. Since 'received' is a constant y' = PV'
+		
+				delta = -y/PV_dif; 				// The increase in 'k' necessary at the tangent's intersection with the PV-axis
+
+				if (eval(k)+eval(delta) != 1) k += delta; 	// We increase/decrease 'k' (the annuity function crashes at k=1)
+
+				rounds++;
+		
+		
+			}
+
+		}
+
+	else		// "NORMAL" ANNUITIES: Annuities paid at the end of each period - annuity-immediate:
+
+		{
+
+		while (Math.abs(y) > 0.000001 && rounds<100)	// Here, we set the accuracy we are looking at.
+			{
+
+			PV = 0;		// The present value of the payments
+			PV_dif = 0;	// The differentiated of the present value
+		
+			interval_start = 0;
+			interval_end = 0;
+
+			
+			/* Now, we compute the present value 'PV' and the corresponding differetiated 'PV_dif' for each interval of the loan, given the 
+			current guess for the discount factor 'k.
+
+			In the case where the loan runse with different interest rates in succeeding intervals, we sum the present value for each. We 
+			also sum their differentiated values. */
+
+			for (i=highest_segment;i>0;i--) 
+				{
+
+				/* In order to compute the effective interesT rate, we must compare all we pay with all we receive. Hence, we must 
+				include eventual fees in the periodic payments. The fee is in 'paymentarray[i][2]': */
+
+				payment = eval(paymentarray[i][0])+eval(paymentarray[i][2]);
+
+				interval_start = interval_end;	// The end of the former interval is the start og this
+
+				interval_end += paymentarray[i][1]; 	// The upper limit of this interval
+							
+				PV += payment/(1-k) * (Math.pow(k,eval(interval_start)+eval(1)) - Math.pow(k,eval(interval_end)+eval(1)));
+
+				/* The sum of the differentiated of two functions is the sum of the difrentiated. Hence, we simply sum the 
+				differentiated in each interval */
+			
+				PV_dif += (payment/ Math.pow(1-k,2)) * (Math.pow(k,eval(interval_start)+eval(1)) - Math.pow(k,eval(interval_end)+eval(1))) + (payment/(1-k))*((eval(interval_start)+eval(1))*Math.pow(k,interval_start) - (eval(interval_end)+eval(1)) * Math.pow(k,interval_end));
+			
+				
+				}
+		
+			/* One payment - the residue - is so far missing. We add the present value of the residue to the present value of
+			the other paymen. If it is paid in the last period, it must be discounted to find the present value.
+
+			The residue was rounded when we computed it earlier: */
+
+
+				PV += residue * Math.pow(k,calculation_periods); 
+
+
+
+			/* We also want to add the differentiated of the residue to the differiented of the other payments. 
+
+			The residue is a function of 'k', and we use the Power rule (http://en.wikipedia.org/wiki/Power_rule): 
+
+			y = x^n => y' = n*x^(n-1): 
+
+			PV_res = residue*Math.pow(k,calculation_periods) => PV_res_dif = residue*calculation_periods*Math.pow(k, calculation_periods-1);
+
+		 	*/
+
+
+		
+				PV_dif += residue * calculation_periods * Math.pow(k, calculation_periods-1);	
+	
+				y = PV-received;				// Searching for a 'k' making y = 0. Since 'received' is a constant y' = PV'
+		
+				delta = -y/PV_dif; 				// The increase in 'k' necessary at the tangent's intersection with the PV-axis
+
+				if (eval(k)+eval(delta) != 1) k += delta; 	// We increase/decrease 'k' (the annuity function crashes at k=1)
+
+				rounds++;
+
+		
+		
+			}
+
+
+		}
+
+
+/* 'k' is a discouting factor that was defined as k = 1/(1+e) where 'e' is the periodic, effective interest rate as decimal fraction. (1+e) is
+the growth rate for each period. Hence, the growth rate for a year is (1+e)^12 (if there are 12 capitalizations per year). The effective, 
+annual interest rate in decimal fraction, thus, is ((1+e)^12)-1. In percentage: er = (((1+e)^12)-1)*100. 
+Since k = 1/(1+e)  => (1+e) = 1/k, we substiute and get er = ((1/k)^12-1)*100: */
+
+
+	return (Math.pow(1/k,capitalization_freq) - 1)*100; // the effective annual interest rate - the principal result of freeLoan
+
+
+/* END 'rateAnnuity()' */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+<<<<<<< ++++|++++ >>>>>> 		(END EFFECTIVE INTEREST RATE)					<<<<<<< ++++|++++ >>>>>> 		 	
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+<<<<<<< ++++|++++ >>>>>> 		EFFECTIVE INTEREST RATE FOR CREDIT CARDS					<<<<<<< ++++|++++ >>>>>> 		 	
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+function creditCard(
+received_cash,		// EITHER.. The cash withdrawn on the card during the period, included all the transaction dependent fees.
+received_purchase,	// ..AND/OR: The purchases done with the card during the period, included all the transaction dependent fees.
+numberofmonths,		// OBLIGATORY.
+interestfree_days,	// 0, 'false' or omitted: zero. Integer > 0: The initial interest-free period (only applied to purchases) in number of days
+round_direction,	// 0, 'false' or omitted: Annuities are rounded after normal rules  1: Rounded up 2. Rounded down
+round_presision,	// 0, 'false' or omitted: Payment rounded to nearest 1/100  1: ..rounded to nearest integer
+remainder_handling,	// 0, 'false' or omitted: The "global" remainder at the end of the loan period is payed / compensated with the last payment 1: ..is ignored 
+ignore_origination,	// 0, 'false' or omitted: Origination fee added to the loan and included in the computation. 1 or true: Computation performed without origination fee 
+fee_cash_transaction,	// 0, 'false' or omitted: 0. Number >= 0: Sum of all transaction fees for cash withdrawals
+fee_purc_transaction,	// 0, 'false' or omitted: 0. Number >= 0: Sum of all transaction fees for purchases
+fee_origination,	// 0, 'false' or omitted: 0. Number >= 0: Processing fees: Sum of eventual inital one-time fees to be payed at the beginning of the loan period. 
+fee_annual,		// 0, 'false' or omitted: 0 .Number >= 0: Fixed fee: Annual, fixed fee.
+fee_period,		// 0, 'false' or omitted: 0 .Number >= 0: Fixed fee. Loans given as a credit line might have a periodical (monthly) fixed fee
+rate_cash,		// OBLIGATORY: Interest rate for cash withdrawals might differ from interest on purchases
+rate_purchase,		// OBLIGATORY: Interest rate for purchases might differ from interest on cash withdrawals
+minpay_perc, 		// The minimum, monthly payment as a percentage of current debt
+minpay_units)		// The minimum, monthly payment in currency units (for instance NOK).
+
+/*
+
+
+The function supports two different interest rates for different parts of the credit card charges - cash withdrawals and purchases.
+
+The function supports an optional interest free period for purchases.
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+//////////////////////////		WHAT THE FUNCTION DOES:		////////////////////////////////////////////////////////////////////////
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+The function computes effective annual percentage rate (EAPR) under two assumptions:
+
+
+a) According to a regulation issued by the Norwegian Consumer Ombudsman: 
+
+http://www.forbrukerombudet.no/asset/4757/1/4757_1.pdf
+
+Here, all charges are assumed made the first day and paid back in 12 monthly annuities. An eventual interest free period or other advantages 
+(cash back) should not be taken into account.
+
+In marketing, the banks should present an EAPR computet as the effective interest rate resulting from a loan of 15.000 NOK. This should consist 
+of 10 purchases in Norway, 3 purchases outside Norway, 1 cash withdrawal in Norway and 1 cash withdrawal outside Norway, each of 1.000 NOK. All 
+made the first day the customer has the card.
+
+Although the user can choose other sums and usage pattern in the calculator, the computation method is still regarded as binding, and the 
+calculator always returns this "government rate" as one of the results.
+
+The total payment is not covered by the regulation. The payment sums could thus be computed under more realistic conditions.
+
+(The Norwegian regulation is an application of a EU directive: 
+
+http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2008:133:0066:0092:EN:PDF)
+
+
+b) As above, but with a more realistic payback stream.
+
+freeCard 1.0 also computes the effective interest rate when the interest-free period is taken into account and where the normally delayed payment
+(15 - 20 days after the end of the month) is considered.
+
+But even this more "realistic" method assumes that all charges are made the first day. So it is not completely realistic. One could envisage a
+future version where the usage was assumed spread out in time; charges made evenly or stocastically.
+
+
+NOT IN THIS VERSION
+
+There are two variables currently harvested in the Datafanger that we don't use here:
+
+Renteberegning varekjøp ved kreditt    	Fakturadato/uttaksdato (rate computation when purchasing - on billday/on purchase day)
+Renteberegning uttak ved kreditt    	Fakturadato/uttaksdato	(rat computation when withdrawing cash - on bill day/on withdrawal day)
+
+Whatever time the interest runs from, will not override the Consumer Ombudsman's model. Furthermore, when there is an interest free period 
+for purchases, interest will not be computed until the end of this period anyway.
+
+Finally, I don't think interest computation from bill day could ever pertain to cash withdrawals. It is dificult to imagine that the 
+banks would "give away" free interest days for cash (for purchases, the shops pay for the interest free days).
+
+
+RESULT
+
+The function returns an array; 'res':
+
+res[0] -> Effective, annual interest rate without taking an eventual interest free period into account ("government template")
+res[1] -> The monthly payment, when we apply the "government template"
+res[2] -> Effective, annual interest rate when taking an eventual interest free period into account
+res[3] -> The monthly payment when we take the interest free period into account
+res[4] -> The remainder
+	
+
+
+The function handles only monthly payments and only annuity loans in arrears (annuity-immediate, or ordinaray annuities).
+
+
+SECTIONS
+
+1)  	Preparation and adaption of data
+2)	The annuities
+3) 	Effective interest rate
+4) 	Result reporting
+
+
+EXTERNAL FUNCTIONS USED
+
+function roundoff()
+function rateAnnuity()
+
+
+
+THE PLAN: THREE ANNUITY SERIES
+
+The interest rate is computed by iterations. Before performing the iterations, we need to know each monthly payment. 
+
+Hence, all the relevant Payments, number of periods and remainders are first computed.
+
+There might be different interest rates for cash withdrawals and purchases. In the case of interest free days, they usually only pertain to
+purchases, not to cash withdrawals. The two streams might have to be treated differently. 
+
+Moreover, there are annual fees not fitting into the model with monthly annuities.
+
+We thus make three annuitiy series:
+
+1) 	The annuities paid back to the card company for cash withdrawal
+2)	The annuities paid back to the card company for purchases
+3) 	The annuity series consisting of annual fees
+
+As there is often an interest free period for purchases, but not for cash withdrawals, this model also allows us to compute a more realistic
+interest rate computation, in addition to the model given in the public regulation.
+
+(In a perfect world, we should be able to randomly spread out the purchases and withdrawal along the time line, for again to
+achieve a more realistic picture of the usage pattern. This last wish is incomaptible with annuities, of course. A feature with evenly spread
+charges to the card would, however be relatively easy to compute. But not in this version.)
+
+
+ERROR CODES:
+
+When the computed payment is smaller than the minimum payment reqired in the parameters 'minpay_perc' and 'minpay_payment', the loan must be 
+paid back faster than the user has requested. It is less confusing to ask the user to select a shorter payback period than to first compute the
+minimum payback time and then compute the effective interest rate. Hence, in these cases we return an error code:
+
+-1	=>	With the chosen payback time, the annuity will fall below the required minimum payment.
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+//////////////////////////		1) PREPARATION AND ADAPTION OF DATA:			  //////////////////////////////////////////////
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+ASSUMPTIONS
+
+a) Fees added to debt: Credit card fees are not paid cash, but assumed added to the debt. 
+b) Origination fee added to the cash withdrawal part of the debt: We presume here that the fixed start fee which we have called 'fee_origination' 
+will be added to the cash withdrawal part of the loan. The reason for this is twofold: Firstly, there might be a interest free period for 
+purchases. This does not happen for cash withdrawals. Secondly, the cash withdrawal might have a higher interest rate than the purchase. 
+The lender would probably place the fee in this higher rate segment.
+
+*/
+
+{
+
+	var loan_purchase = eval(received_purchase) + eval(fee_purc_transaction); 	
+
+	
+ 	var loan_cash = eval(received_cash) + eval(fee_cash_transaction)  + eval(fee_origination);	
+
+	
+
+/* There is also an annual fee ('fee_annual'). This is handled further down as an annual payment stream.
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+//////////////////////////		2) THE ANNUITIES						////////////////////////////////////////
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+	
+
+We first compute the present value of the three annuities when no allowance is made for the interest-free period. We use the formulas we've
+already derived:
+
+
+
+*********************************************************************************
+|										|
+|	FORMULA FOR ANNUITY-IMMEDIATE:						|
+|										|
+|										|
+|	annuity = loan * (1 - k) / (k - Math.pow(k,termnumber+1));		|
+|										|
+|										|
+|	where									|
+|										|
+|										|
+|	k = 1/(1+rate);								|
+|										|
+|										|
+*********************************************************************************
+
+Annual fees are paid at the beginning of the year. Hence, we need the annuity-due version of the annuity formula too:
+
+
+*********************************************************************************
+|										|
+|	FORMULA FOR PRESENT VALUE (included payment at time zero):		|
+|										|
+|										|
+|	pv = annuity * (1 - Math.pow(k,termnumber+1)) / (1 - k) 		|
+|										|
+|										|
+|	where									|
+|										|
+|										|
+|	k = 1/(1+rate);								|
+|										|
+|										|
+*********************************************************************************
+
+
+
+We use our variable names:
+
+termnumber -> numberofmonths
+loan 	-> loan_cash and loan_purchase
+
+*/
+
+
+	var purchase_annuity;
+
+	var cash_annuity;
+
+
+// Our version of the annuity formula utilzes the number of periods plus one:
+
+
+	var plusmonth = eval(numberofmonths)+eval(1);
+
+
+// The annuity for cash withdrawals. We add the annual fee to the "official" interest rate, hence signalling that it has the same foundation and effect:
+
+
+	var kc = 1 / (1 + eval(rate_cash)/1200);	// 'k' from the formula above, for cash withdrawals. 
+
+	if (loan_cash > 0) cash_annuity = loan_cash * (1 - kc) / (kc - Math.pow(kc,plusmonth));
+	else cash_annuity = 0;
+
+
+// The annuity for purchases. We add the annual fee to the "official" interest rate, 
+
+
+	var kp = 1 / (1 + eval(rate_purchase)/1200);	// 'k' from the formula above, for purchases. 
+
+	if (loan_purchase  > 0) purchase_annuity = loan_purchase * (1 - kp) / (kp - Math.pow(kp,plusmonth));// Interest in arrears for the "government" computation
+	else purchase_annuity = 0;				
+
+
+	var ka = 1 / (1 + rate_cash/100);		// Annual discount factor
+
+	var years = Math.floor(numberofmonths/12);	// How many annual fees must we pay?
+
+
+/* The ensuing logic is subtle: The annual fee is charged at the beginning of the first year, but payed with the normal annuities.
+Henve, the present value of it does not equal the nominal sum. */
+
+
+	var annualfee_pv = fee_annual * (1 - Math.pow(ka,years)) / (1 - ka); 		// Present value of annuities in advance.
+
+	var annual_annuity = annualfee_pv  * (1 - kc) / (kc - Math.pow(kc,plusmonth));	// Monthly payments in arrear
+
+
+// The sum of the three annuities, included periodic fees. 
+
+
+	var sumannuity = cash_annuity + purchase_annuity + annual_annuity + fee_period;
+
+	var rounded_annuity = roundoff(sumannuity, round_direction, round_presision);
+
+
+/*
+
+MONTHLY, MINIMUM PAYMENT
+
+Consider the parameters to the function:
+
+minpay_perc	=>	The minimum, monthly payment as a percentage of current debt
+minpay_units	=>	The minimum, monthly payment in nominal currency units (for instance NOK or GBP).
+
+Most card issuers demand that the borrower pays back a minimum payment each month. Normally, this payment is a 
+percentage of the credit charged to the card, 'minpay_perc'. Neither should this ammount fall below the fixed sum
+'minpay_units'.
+
+a) As this function 'creditCard()' only handles annuity loans, the payments are equal in all periods. If the first payment 
+is smaller than the threshold in 'minpay_units', all are. In this case, the minimum payment will take the place of the 
+computed annuity. The effect would be a shorter payback time than the calculator's user has requested.
+
+As this is a user input, it is not "our job" to recalculate the periode. Instead, we will return an error message: 
+Choose a shorter payback period!
+
+b) Likewise, if the minimum percentage of the initial debt exeeds the annuity, the payback period will be shorter!
+
+As the debt shrinks with time in our model, the minimum percentage will not exeed the annuities later if they don't do
+it initally.
+
+*/
+
+
+	var initaldebt = loan_cash + loan_purchase + fee_annual; // What is charged to the card, included fees.
+	
+	var minfee_perc = minpay_perc / 100 * initaldebt;	// Computing the minimum percentage payment in the first term
+
+	if (minpay_units > sumannuity || minfee_perc > sumannuity) return - 1;
+
+
+/*
+
+We are going to use a rate computing function - rateAnnuity() - that expects an array as one of the parameters.
+
+Each row in the array/matrix 'interval_data':
+
+interval_data[x][0] -> payment	 			Periodic payment, rounded
+interval_data[x][1] -> number of terms; 		The number of periodic payments it takes to pay down the loan
+interval_data[x][2] -> periodic fee 			Already included
+interval_data[x][3] -> adjusted lower segment limit 	Not relevant here							
+interval_data[x][4] -> upper segment lomit		Not relevant here
+interval_data[x][5] -> remainder; 			Fractions of cents we pay to little or too much each time due to rounding 
+
+
+*/
+
+
+		
+	var interval_data = new Array();		
+	interval_data[1] = new Array();
+
+	interval_data[1][0] = rounded_annuity;									
+	interval_data[1][1] = eval(numberofmonths);
+	interval_data[1][2] = 0;
+	interval_data[1][3] = 0;
+	interval_data[1][4] = eval(received_cash)+eval(received_purchase);
+	interval_data[1][5] = sumannuity - rounded_annuity; 
+
+
+/*
+
+	
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+//////////////////////////		3) EFFECTIVE INTEREST RATE:		////////////////////////////////////////////////////////////////
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+
+THE "GOVERNMENT FORMULA":
+
+A Norwegian public regulation decides the general algoritm for computing the effective interest rate for credit cards. One of the statutes is 
+that all withdrawals and purchases shall be considered to have been made the first day.  This is our present value. We are looking for an 
+interest rate that makes the present value of the monhly payback stream equal to this present value. 
+
+To compute the effective interest rate, we use the function rateAnnuity from freeLoan:
+
+rateAnnuity(received, calculation_periods, paymentarray, highest_segment, residue, capitalization_freq, guessrate, advance )
+
+ */
+
+
+	var rate_guess = rate_purchase/12;	// All credit cards have at least an interest rate for purchases
+
+	var received = eval(received_purchase) + eval(received_cash);
+
+	var er = rateAnnuity(received, numberofmonths, interval_data, 1, 0, 12, rate_guess, false );
+
+
+/*
+
+
+
+
+THE "ADVANCED" FORMULA
+
+Most credit cards don't charge interest for purchases before after 45 / 50 days, while cash withdrawals are charged 
+with interest from the first day. 
+
+The "government formula" does not take this into consideration, as it is adapted to a public regulations deciding 
+how effective interest on credit cards should be computed: Every charge to the card - purchases and withdrawals are 
+assumed to be made the first day. Thereafter, the card is not charged more and the debt is paid back in monthly 
+annuities in arrears at the end of each month. 
+
+The guide states that an eventual interest free period should be ignored in this computation.
+
+But the user might still want to see a more realistic computation. We can take the interest free period into account 
+by treating the payback stream from the purchases differently: We apply the present value formula for annuities due -  
+the first installment being paid at once, in time zero, at the very start of the time line. This will emulate that 
+there is no interest before the payment takes place. These annuities should be the ones actually paid.
+
+We compute the sommon annuity for the other elements, the payments pertaing to cash withdrawals and fees, "normally", 
+treating these as annuities in arrears. 
+
+I might be neccecary to augment this latter payment stream further, by the time from the bill is issued until the due
+date. The annuity in arrears already takes 30 interest rate bearing days into consideration, but there might be 15/20
+more. 
+
+(These additional days will be computed with the nominal interest rate computed by the 'bank-method': The aritmetic
+average of the interest rate. By this method, when the monthly interest rate is 1%, the rate for half a month is simply
+1/2%. This is not mathematically correct, but it is the way the banks normally do it, so we must emulate that here in 
+order to obtain the actual payments.)
+
+There are not two payment streams, only one. Both the interest-bearing cash withdrawals and the temporarily interest 
+free purchases are served with the same monthly payback stream, starting after 45 / 50 days. 
+
+Hence, we sum the payments, getting one payment stream and finding the present value of this.
+
+But the normal present value in arrears formula stipulates that our observation point lays one month before the first 
+payment.
+
+We, thus, have to further discount the payment stream with the 15/20 days longer, first period.
+
+We have already computed the annuity for purchases, using the normal annuity formula with annuities in arrears. Now, 
+we recompute it with the annities in advance-formula:
+
+
+	annu_purch = loan_purchase * (1 - kp) / (1 - Math.pow(kp,numberofmonths));	// Applying the formula for annuities in advance
+
+	annu_other = sumannuity - purchase_annuity; 					// Subtracting the old "purchase annuity", computed above, stipulating annuities in arrears
+
+	annu = annu_purch + annu_other;
+
+
+We are searching for an annual, effective interest rate. But since the payments are monthly, it is practical to first 
+find the monthly interest rate, 'r', which is a desimal number (0,015 means 1,5%). Each monthly amount should be 
+multiplied with 1,015 (1 + r) to obtain the next.
+
+If something grows by 1,5% each month, how much does it grow by in one day?
+
+If we assume daily capitalization:
+
+	(1 + rd) = (1 + r) ^ (1/30)			// The daily growth rate is the 30th root of the monthly growth rate
+
+Discouting means dividing by the growth factor, or multiplying by 1 / (1 + r). We call this factor k: 
+
+
+	As k = 1 / (1 + r) => (1 + r) = 1/k		// The monthly growth factor
+
+	(1 + r)^(1/30) = (1/k)^(1/30)			// The daily growth factor
+
+
+We now have the annuity stream. We first find the preliminary present value as such:
+
+	pv_p = annu * (k - Math.pow(k,numberofmonths+1)) / (1 - k)
+
+With its monthly scope, this is the present value one month ahead of the first payment.
+
+But the payment stream in reality starts later.
+
+	extra_days = due_days - 30 		// The number of days we shall discount the computed present value by
+
+We will first compute the growth factor for the extra days. It is the daily growth factor, '(1/k)^(1/30)', raised by the 
+number of extra days:
+
+	extra_growth = ((1/k)^(1/30))^extra_days
+
+I follows as normal computation rules that (a^m)^n = a^(m * n), Thus..
+
+	extra_growth = (1/k)^(1/30 * extra_days) = (1/k)^(extra_days/30)
+
+The discount rate is the inverse of the growth rate: 1/ (1 + r) = k
+
+Hence, we make a new discount rate, ke,  for the 'extra_days' number of days:
+
+	ke = 1 / ((1/k)^(extra_days/30))
+
+Or, in Javascript:
+
+	ke = 1 / Math.pow(1/k,extra_days/30)
+
+
+We still maintain the assumption that all charges to the card are made the first day. Thus, the present value equals 
+the nominal, received sum. 
+
+The annuity formula gives us the payment stream that starts 30 days after we get the card. But the due date is slightly later, 
+normally 15-20 days into the next month. The bank will charge interest up to payment day, so we must discount the preliminary
+present value we found, 'pv_p', with these extra days to obtain the present value.
+
+received = pv_p * ke		// Discounted with the extra days. We substitute pv_p with its formula:
+
+received = (annu * (k - Math.pow(k,numberofmonths+1)) / (1 - k)) * ke	// We substitute 'ke' by 'ke = 1 / Math.pow(1/k,extra_days/30)', as derived above:
+
+received = (annu * (k - Math.pow(k,numberofmonths+1)) / (1 - k)) * 1 / Math.pow(1/k,extra_days/30)		
+
+=> (annu * (k - Math.pow(k,numberofmonths+1)) / (1 - k)) / Math.pow(1/k,extra_days/30) - received = 0; 
+
+y = (annu * (k - Math.pow(k,numberofmonths+1)) / (1 - k)) / Math.pow(1/k,extra_days/30) - received;	// Assuming a continous function
+
+In order to use Newton's method (http://en.wikipedia.org/wiki/Newton%27s_method), we must also find the derived of the function - y'
+
+This is of course great fun, as we have a function with another function as one of its variables. 
+
+We'll proceed stepwise, by breaking up y in its parts and treat the parts  separately. First in its two main derivable factors:
+
+	y = (annu * (k - Math.pow(k,numberofmonths+1)) / (1 - k)) / Math.pow(1/k,extra_days/30) - received;
+
+	a = annu * (k - Math.pow(k,numberofmonths+1)) / (1 - k)
+
+	b =   Math.pow(1/k,extra_days/30)
+
+	When we have found the derivatives of a and b, we can apply the product rule:
+
+	y' = (a'*b - a * b') / b^2
+
+	First a
+	
+	a = annu * (k - Math.pow(k,numberofmonths+1)) / (1 - k)
+
+	a consists of functions both in its nominator and denominator. We treat these separartely too:
+
+		a_no = annu * (k - Math.pow(k,numberofmonths+1))
+
+		a_de = (1 - k)
+
+	We are looking to apply the quotient rule:
+
+	a' = (a_no' * a_de - a_no * a_de') / a_de ^2
+
+	First the derivatives:
+
+		a_no = annu * (k - Math.pow(k,numberofmonths+1))
+
+		a_no' = annu * (1 - (numberofmonths+1) * Math.pow(k,numberofmonths))
+
+		a_de =  (1-k)
+
+		a_de' =  -1
+
+	a' = ((annu * (1 - (numberofmonths+1) * Math.pow(k,numberofmonths))) * (1-k) - annu * (k - Math.pow(k,numberofmonths+1)) * -1) / Math.pow(1 - k, 2)
+
+	a' = ((annu * (1 - (numberofmonths+1) * Math.pow(k,numberofmonths))) * (1-k) + annu * (k - Math.pow(k,numberofmonths+1))) / Math.pow(1 - k, 2)
+
+	(For convenience, we have already computed 'numberofmonths + 1' above, in the variable 'plusmonth'
+
+	Then b:
+
+	b =   Math.pow(1/k,extra_days/30)
+
+	Applying the chain & power rule:
+
+
+	*********************************************************************************
+	|										|
+	|	Combining the Chain Rule and the Power Rule				|
+	|										|
+	|	y = f(x) = [u(x)]^n							|
+	|										|
+	|	f'(x) = n * [u(x)]^n-1 * u'(x)						|
+	|										|
+	*********************************************************************************
+
+	b' = extra_days/30 * Math.pow(1/k,(extra_days/30)-1) * -1/Math.pow(k,2)		// The last term is the derivative of 1/k, which is -1/k^2
+
+	b' = - extra_days/30 * Math.pow(1/k,(extra_days/30)-1)/Math.pow(k,2)		
+
+We are approacthing our functions. Remember the quotient rule:
+
+y' = (a'* b - a * b') / b^2		// We substitute the right hand factors with their formulas:
+
+y' = ((annu * (1 - plusmonth * Math.pow(k,numberofmonths))) * (1-k) + annu * (k - Math.pow(k,plusmonth))) / Math.pow(1 - k, 2) * Math.pow(1/k,extra_days/30) - (annu * (k - Math.pow(k,plusmonth)) / (1 - k)) * - (extra_days/30 * Math.pow(1/k,(extra_days/30)-1)/Math.pow(k,2))) / Math.pow(Math.pow(1/k,extra_days/30))^2
+
+The term 'Math.pow(Math.pow(1/k,extra_days/30))^2' can be transformed to 'Math.pow(1/k,extra_days/30 * 2) = Math.pow(1/k,extra_days/15)'. Hence..
+
+y' = ((annu * (1 - plusmonth * Math.pow(k,numberofmonths))) * (1-k) + annu * (k - Math.pow(k,plusmonth))) / Math.pow(1 - k, 2) * Math.pow(1/k,extra_days/30) - (annu * (k - Math.pow(k,plusmonth)) / (1 - k)) * - (extra_days/30 * Math.pow(1/k,(extra_days/30)-1)/Math.pow(k,2))) / Math.pow(1/k,extra_days/15)
+
+y = (annu * (k - Math.pow(k,plusmonth)) / (1 - k)) / Math.pow(1/k,extra_days/30) - received;
+
+Simple as that :)
+
+The payments are computed with the bank's interest rate. All discounting is done with ours: The computed, effective interest rate derived through
+iterations.
+
+
+Before we can compute the effective interest rate, we must compute the annuity:
+
+*/
+
+	
+
+	var due_days = 45;					// Normal number of days from the first day in the month until the bill is due? HARDCODED!
+
+	if (interestfree_days > 30) extra_days = interestfree_days - 30; 
+	else extra_days = due_days - 30; 
+	
+	var annu_purch = loan_purchase * (1 - kp) / (1 - Math.pow(kp,numberofmonths));	// Applying the formula for annuities in advance
+
+
+/* The value of the annuity pertaining to cash withdrawals and annual fee must accrue interest for another 15 / 20 days, 
+to be payed at the same day as the interest free purchase charges. To this end, we subtract the old "purchase annuity", 
+computed above. We also subtract the periodic fee, as that should not accrue interest. It should have its nominal
+value at payday: */
+
+
+	var annu_other = sumannuity - purchase_annuity - fee_period; 	
+	
+	var extra_rate = rate_cash / 36000 * extra_days;	// The interest accrued for the period from the end of the month until the bill is due
+
+	var annu_other_inc = annu_other * (1 + extra_rate) 	// The annuity for cash withdrawals, augmented with interest until the bill is due - for another 15/20 days.
+
+	var annu_unrounded = annu_purch + annu_other_inc + fee_period; // As we are no on the correct day, we add the nominal value of the periodic fee again
+
+	var annu = roundoff(annu_unrounded, round_direction, round_presision); // The monthly annuity, taking 30 interest free days for purchases into account
+
+	
+//	CONTROLLING FOR THE MINIMUM MONTHLY PAYMENT:
+
+
+	if (minpay_units > annu) return - 1;			// We intrerupt the computation if the minimum payment exeeds the computed annuity
+
+
+
+/*
+
+COMPUTING THE REMAINDER
+
+When computing an annuity, we typically get numbers as 234.938267484958. This is not payable in a bank. 234.94 is, but these slightly too big
+annuity will make us overshoot the target payment at the end of the loan period (we pay a little too much).
+
+This amount is the remainder. It is either ignored or compensated. It it is compensated, this is normally done with the last payment in 
+the loan period. 
+
+We first compute the present value of the remainder. Then we compute the forward value, the value when it is actually to be paid, with the 
+last payment.
+
+But we normally cannot pay the remainder either. We can pay only the rounded reminder.
+
+To investigate how the remainder affects our computation of effective interest rate, we then again has to compute the present value of the 
+amount that is actually to be paid..
+
+*/
+
+
+	var k =  kp; 	// The fist suggestion of monthly discount rate is set to the nominal discount rate for purchases.
+
+	if (remainder_handling == 0)	//  The remainder to be compensated / charged with the last payment
+
+		{
+
+			var pv_rounded = (annu * (k - Math.pow(k,plusmonth)) / (1 - k)) / Math.pow(1/k,extra_days/30);
+
+			var pv_unrounded = (annu_unrounded * (k - Math.pow(k,plusmonth)) / (1 - k)) / Math.pow(1/k,extra_days/30); // Negative number: In customer's favour
+
+		
+		// The unrounded present value of the remainder is the difference between these:
+
+
+			var grossremainder_pv = pv_unrounded - pv_rounded; 
+
+
+		// The forward value of the remainder (amount to be paid with the last term):
+
+			var remainder_fv = grossremainder_pv * Math.pow(1/k, numberofmonths) * Math.pow(1/k,extra_days/30); 
+
+
+		/* We find the remainder we shall actually pay by summing the unrounded annuity with the unrounded remainder. We then subtract the rounded
+		annuity and round what is left. In this latter operation, we round to the nearest number, as we assume the intention of this remainder is
+		to correct rounding errors done previously.  */
+
+
+			var remainder = roundoff(roundoff(annu_unrounded + remainder_fv, round_direction, round_presision) - annu, round_direction, round_presision);
+
+
+		/* Now, we have found the actually paid/rounded remainder in the last term. The present value of it is will vary with the effective interest
+		rate we find. This present value must be included when we do the iterations:
+
+			remainder_pv = remainder * ( Math.pow(k, numberofmonths) * Math.pow(k,extra_days/30)); 
+
+		=>	remainder_pv = remainder * ( Math.pow(k, numberofmonths+extra_days/30);
+
+
+		Where the exponentials can be summed: */
+
+
+
+			var exp = eval(numberofmonths)+ eval(extra_days/30);
+
+			//var remainder_pv = remainder * Math.pow(k, exp);
+
+
+
+		/* We'll also need the differentiated of the present value of the remainder to add to the differentiated of the present value of the whole loan. We use the quotient rule.
+		Bearing in mind that 'remainder' now is a constant. */
+
+	
+			//remainder_pv_dif = - remainder * (numberofmonths + extra_days/30) * Math.round(1/k, numberofmonths + extra_days/30 - 1) / Math.round(1/k, numberofmonths + extra_days/30 + 2);
+
+		}
+
+	else 	
+
+		{
+
+		var remainder = 0;					// The remainder to be ignored
+
+		var exp = eval(numberofmonths)+ eval(extra_days/30);	// Still used in one of the formulas
+
+		}	
+
+
+
+// THE ITERATIONS
+
+
+	var rounds = 0;	// Counts the number of iterations
+
+	var y = 1; 	// 'y' is the function value that we want to make close to '0'. Given av positive value here, so we can enter the 'while'-loop.
+
+	var y_dif; 	// 'y' differentiated
+	
+	while (Math.abs(y) > 0.00001 && rounds<100)	// Here, we set the accuracy we want.
+		{
+
+			y =  (annu * (k - Math.pow(k,plusmonth)) / (1 - k)) * Math.pow(k,extra_days/30) - received;
+
+		
+		// We add the present value of the remainder 'remainder_pv':
+
+
+			y += remainder * Math.pow(k, exp);
+	
+			y_dif = ((annu * (1 - plusmonth * Math.pow(k,numberofmonths)) * (1-k) + annu * (k - Math.pow(k,plusmonth))) / Math.pow(1 - k, 2) * Math.pow(1/k,extra_days/30) +  annu * (k - Math.pow(k,plusmonth)) / (1 - k) *     extra_days/30 * Math.pow(1/k,(extra_days/30)-1)/Math.pow(k,2)) /  Math.pow(1/k,extra_days/15);
+
+
+		// We add the differentiated of the present value of the remainder 'remainder_pv_dif':
+
+
+			y_dif += remainder * exp * Math.pow(k, exp - 1);
+
+			delta = -y/y_dif; 				// The increase in 'k' necessary at the tangent's intersection with the PV-axis
+
+			if (eval(k)+eval(delta) != 1) k += delta; 	// We increase/decrease 'k' (the annuity function crashes at j==1)
+	
+			rounds++;
+				
+		}
+
+
+var er_a = (Math.pow(1/k, 12) - 1) * 100;	// The effective, annual interest rate with the "advanced" model
+
+/* 
+
+
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+//////////////////////////		4)  RESULT REPORTING			////////////////////////////////////////////////////////////////
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+
+We return the array 'res' with these values:
+
+*/
+
+	res = new Array(3);
+	res[0] = er;			// Effective, annual interest rate according to the "government template"		
+	res[1] = rounded_annuity;	// Annuity according to the "government template"
+	res[2] = er_a; 			// Effective, annual interest rate when taking interest-free period into account
+	res[3] = annu;			// Annuity when taking interest-free period into account
+	res[4] = remainder;		// Remainder
+
+
+	return res;
+
+
+/* END function creditCard() */}
+
+
+
+
+
+
+
+
+
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+<<<<<<< ++++|++++ >>>>>> 		END EFFECTIVE INTEREST RATE FOR CREDIT CARDS					<<<<<<< ++++|++++ >>>>>> 		 	
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+<<<<<<< ++++|++++ >>>>>>  		(END FREECARD)			  					  	<<<<<<< ++++|++++ >>>>>>
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// BELOW IS THE TEST MODULE FOR FREECARD (NOT A PART OF FREECARD ITSELF)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+ 
+
+function indata_clean(streng,us_numberformat)
+{
+/* 
+o Converts from  Norwegian/French number format to US/UK number format
+o Removes blanks
+o FOR NUMBERS ONLY: Empty values set to zero
+*/
+var innstreng = new String(streng);
+var renset;
+if (us_numberformat == false)
+	{
+ 
+	/* '\xn' treffer den hexadesimale karakteren 'n'. Norsk punktum har koden '2E'. '\x2E' treffer derfor norsk punktum. 
+	Flagget 'g' betyr 'søk i hele strengen'. Skal det settes flagg, må søkestrengen innledes og avsluttes med '/'.
+	Rekkefølgen i utbyttingen er ikke tilfeldig */
+ 
+	renset = innstreng.replace(/\x2E/g, "");	// Replaces period/norwegian thousand delimiter (.) with nothing
+	renset = renset.replace(",", ".");		// Replaces Norwegiang comma (,) with angloamerican (.)
+ 
+	}
+else renset = innstreng;
+renset = renset.replace(/\s/g,"");			// '\s' matches blanks, line shift etc. 'replace(/\s/g,"")' replaced with nothing
+if (renset.length == 0 || isNaN(renset)) renset = 0;	// Empty and non-numericals set to zero
+return renset;
+/* END function indata_clean() */}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+ 
+ 
+function outdata_clean(streng,us_numberformat)
+{
+// Performs the opposite operations of 'indata_clean()'
+var utstreng = new String(streng);
+if (us_numberformat == false) return utstreng.replace(/\x2E/g, ",");	// Replaces us/uk commas with norw./french
+else return utstreng;
+return renset;
+/* END function utdata_rens() */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function thousandDiv(tall,us_numberformat)
+{
+// Divides long numbers in groups of three and plave the appropriate delimiter between the groups.
+if (us_numberformat) tusenskille =",";else tusenskille = ".";
+if (isNaN(tall) == false)
+	{
+	var tall = new String(tall);
+	var lengde = tall.length;
+	var nytall = "";
+	while (lengde > 3)
+		{
+ 
+		nytall = tusenskille+tall.substring(lengde-3,lengde)+nytall;
+		lengde = lengde-3;
+ 
+		}
+	if (lengde>0) nytall = tall.substring(0,lengde)+nytall;
+	return nytall;
+	}
+else return tall;
+/* END function thousandDiv() */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+////////////////// FUNCTIONS FOR QUICK-SORT: /////////////////////////////////
+
+
+/* Denne elegante utgaven av Quick Sort bygger i det vesentlige på en algoritme kopiert
+fra 
+
+http://en.literateprograms.org/Quicksort_(JavaScript)?action=history&offset=20070102180347
+
+Jeg har føyd til et par paranteser for at den skal kunne sortere matriser.
+
+Fra 'literateprograms' er også denne lisensen:
+
+Copyright (c) 2010 the authors listed at the following URL, and/or
+the authors of referenced articles or incorporated external code:
+http://en.literateprograms.org/Quicksort_(JavaScript)?action=history&offset=20070102180347
+ 
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+he following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+
+
+
+function partition(array, begin, end, pivot, kolonne)
+{
+	var piv=array[pivot][kolonne]; 	// Her er VERDIEN som skal sammenliknes
+	array.swap(pivot, end-1);	// Her byttes verdiene på de to arrayplassene
+	var store=begin;		// 'store' lagrer her indeksen for hvor denne delen av arrayet starter
+	var ix;
+	for(ix=begin; ix<end-1; ++ix) 
+		{
+		if(array[ix][kolonne]<=piv) 
+			{		// Om veriden ved index 'ix' er mindre eller lik verdien ved index 'piv'
+			array.swap(store, ix);
+			++store;
+			}
+		}
+
+	array.swap(end-1, store);
+
+	return store;
+
+/* END function partition() */}
+
+
+
+
+
+
+Array.prototype.swap=function(a, b)
+{
+	var tmp=this[a];
+	this[a]=this[b];
+	this[b]=tmp;
+/* 'prototype.swap'*/}
+
+
+
+
+
+
+function qsort(array, begin, end, kolonne)
+{
+	if(end-1>begin) {
+		var pivot=begin+Math.floor(Math.random()*(end-begin));
+
+		pivot=partition(array, begin, end, pivot, kolonne);
+
+		qsort(array, begin, pivot, kolonne);
+		qsort(array, pivot+1, end, kolonne);
+	}
+/* END function qsort() */}
+
+
+
+
+function quick_sort(array, kolonne)
+{
+// 'kolonne' er den kolonnen matrisen skal sorteres etter.
+
+qsort(array, 1, array.length, kolonne); // Den første raden - rad null - er overskrifter og skal ikke inngå i sorteringen
+
+return array;
+
+/* END function quick_sort() */}
+
+
+
+
+
+
+////////////////// END - FUNCTIONS FOR QUICK-SORT //////////////////////////
+
+
+
+
+
+function polediagram(data,normalize)
+{
+// From http://html5laboratory.com/creating-a-bar-chart-with-canvas.php
+
+graph(data);
+
+		function graph(data) {							
+			var graphCanvas = document.getElementById('graphSpace');
+			// Ensure that the element is available within the DOM
+			if (graphCanvas && graphCanvas.getContext) {
+				// Open a 2D context within the canvas
+				var context = graphCanvas.getContext('2d');
+				context.clearRect(0,0,context.canvas.width,context.canvas.height);
+
+				// Bar chart data
+				/* var data = new Array(5);
+				data[0] = "Rome,200";
+				data[1] = "Dublin,120";
+				data[2] = "London,80";
+				data[3] = "Berlin,230";
+				data[4] = "Valetta,345";*/
+				
+				// Draw the bar chart
+				drawBarChart(context, data, 50, 100, (graphCanvas.height - 20), 50);
+			}
+		}
+		
+		// drawBarChart - draws a bar chart with the specified data
+		function drawBarChart(context, data, startX, barWidth, chartHeight, markDataIncrementsIn) {
+			// Draw the x and y axes
+			context.lineWidth = "1.0";
+			// var startY = 380;
+			var startY = 480;
+			drawLine(context, startX, startY, startX, 30); 
+			drawLine(context, startX, startY, 570, startY);			
+			context.lineWidth = "0.0";
+			var maxValue = 0;
+			for (var i=0; i<data.length; i++) {
+				// Extract the data
+				var values = data[i].split(",");
+				var name = values[0];
+				var height = parseInt(values[1]/normalize);
+				if (parseInt(height) > parseInt(maxValue)) maxValue = height;
+				// Write data to chart
+				context.fillStyle = "#b90000";
+				drawRectangle(context, startX + (i * barWidth) + i, (chartHeight - height), barWidth, height, true);
+				// Add the column title to the x-axis
+				context.textAlign = "left";
+				context.fillStyle = "#000";
+				context.fillText(name, startX + (i * barWidth) + i, chartHeight + 10, 200);				
+			}
+			// Add some data markers to the y-axis
+			var numMarkers = Math.ceil(maxValue  / markDataIncrementsIn);
+			context.textAlign = "right";
+			context.fillStyle = "#000";
+
+			normalizedIncrement = markDataIncrementsIn*normalize;
+			normalizedValue = 0;
+
+			var markerValue = 0;
+			for (var i=0; i<numMarkers; i++) {		
+				context.fillText(normalizedValue, (startX - 5), (chartHeight - markerValue), 50);
+				markerValue += markDataIncrementsIn;
+				
+				normalizedValue += normalizedIncrement;
+				
+			}
+		}		
+		
+		// drawLine - draws a line on a canvas context from the start point to the end point 
+		function drawLine(contextO, startx, starty, endx, endy) {
+			contextO.beginPath();
+			contextO.moveTo(startx, starty);
+			contextO.lineTo(endx, endy);
+			contextO.closePath();
+			contextO.stroke();
+		}
+		
+		// drawRectanle - draws a rectangle on a canvas context using the dimensions specified
+		function drawRectangle(contextO, x, y, w, h, fill) {			
+			contextO.beginPath();
+			contextO.rect(x, y, w, h);
+			contextO.closePath();
+			contextO.stroke();
+			if (fill) contextO.fill();
+		}	
+
+/* END function polediagram() */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function graph(nr)
+{
+/* Makes a graph with data from product number 'nr' */
+
+var res = testbench(nr);
+
+/* We shall draw using the function 'polediagram()' that requires a text array as parameter. Every element is a text where
+the label and the column hight is divided by a delimiter: "Termin 0-34, 5252" 
+
+In 'res' we now have an array like this:
+
+res[0] -> effective annual interest rate
+res[1] -> remainder
+res[2][j] -> array with one 'j' for each segment that is used:
+	res[2][j] = new Array();
+	res[2][j][0] = interval_data[i][0]; 	// x'th interval's periodic payment, rounded without fee
+	res[2][j][1] = interval_data[i][1]; 	// The number of periods the x'th interval consists of
+	res[2][j][2] = interval_data[i][2];	// The periodic fee in the x'th interval
+	res[2][j][3] = interval_data[i][3];	// Remaining pricipal at the end of the x'th interval (adjusted lower segment limit)
+	res[2][j][4] = interval_data[i][4];	// Principal at the start of the x'th interval (upper segment lomit)
+
+*/
+
+var kr,i;
+i = res[2].length-2; // Element zero is requires in 'polediagram()'
+enhet = 1;
+var data = new Array(i);
+for (j=1;j<res[2].length;j++) 
+	{
+	kr = res[2][j][0]+res[2][j][2];
+	/* The column height is maximum 500. Hence, we "normalize" the amount, so that the highest column will be approximately 500: */
+	unit = Math.round(kr/5000)*10;
+	if (Math.round(kr/4000)*10 > unit) unit= Math.round(kr/4000)*10;
+	data[i] = res[2][j][1]+" x "+thousandDiv(Math.round(kr),false)+","+Math.round(kr);
+	i--;
+	}
+document.getElementById("graph_heading").innerHTML = boliglansmatrise[nr][1];
+polediagram(data,unit);
+
+/* END function 'graph()*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function emptytozero(parameter)
+{
+/*In the matrix 'boliglansmatrise' data might be ruined or misrepresented. In that case, we use nil. */
+
+if (!isNaN(parameter)) return parameter;
+else if (typeof parameter === 'undefined' || typeof nr == 'undefined' || !parameter || parameter =="" || parameter ==" ") return 0;
+
+/*END function emptytozero()*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function cardBench(nr)
+{
+
+/* Testing the credit card function creditCard() with 'live' data from Finansportalen.
+
+
+NAMING CONVENTIONS
+
+Type of fee:
+
+ff - fixed fee
+pf - percentage fee
+ex - exchange fee
+pe - periodic fee (for instance per month, not per transaction)
+
+
+Segment:
+
+lo - low (from low limit)
+hi - high (to high limit)
+
+
+Type of transaction:
+
+cw - cash withdrawal
+pu - purchase
+tr - transfer to account
+mo - mobile payment
+cu - currency withdrawal
+bi - paying bills in the internet bank with your credit card
+
+
+Where:
+
+hb - home bank (user's current bank) cash machine
+ch - at the counter of home bank
+ob - other bank's cash machine
+co - at the counter of other bank
+sh - in a shop
+do - domestically
+eu - abroad, inside europe
+wo - outside europe
+
+
+When:
+
+bh - business hours
+oh - other hours
+
+
+Minimum rule:
+
+mi - the combined fixed and percentage fee can not be lower
+
+
+Segment number:
+
+01, 02, 03 etc
+
+
+Example:
+
+pu_wo_ff_01 	- fixed fee for purchase outside europe, segment one
+pu_wo_pf_01 	- percentage fee for purchase outside europe, segment one
+pu_wo_lo_01 	- lower amount limit for fixed fee for purchase outside europe, segment one
+pu_wo_hi_01 	- higher amount limit for fixed fee for purchase outside europe, segment one
+pu_wo_mi_01 	- minimum amount in fee for the transaction fee for purchase outside europe (sum of fixed and percentage fee)
+pu_wo_ex_01 	- percentage currency exchange fee for purchase outside europe in addition to other fees.
+
+pu_wo		- purchase outside europe
+cw_wo		- cash withdrawals outside Europe
+cw_ch		- cash withdrawal at the counter of home bank
+cw_co		- cash withdrawal at the counter of other bank	
+cu_hb		- currency withdrawal in own bank (cash machine)
+cw_sh		- cash withdrawal in a shop
+tr		- transfer money from your credit card to your ordinary bank account
+bi		- fee for paying bills in the internet bank with the creditcard
+mo		- fee for paying with the mobile phone in a shop
+pu_do 		- fee for domestic purchases
+pu_eu 		- fee for purchases abroad, but within Europe
+o		- origination fee (one time fee at the startup of the card)
+pb		- paper bill in the snail mail
+
+*/
+
+var monthscope;
+
+/* The current Finansportalen Credit Card Calculator computes the intital debt as the sum of the first month's domestic usage and the 
+first year's use abroad. Another approach is to sum up all usage for one year, which is the alternative of this test client: */
+
+if (document.getElementById("fin").checked) monthscope = 1; else monthscope = 12;	// Current Finansportalen scope used?
+		
+
+// Usage pattern, entered by user in the calculator:
+
+
+var am_cw_hb_bh = indata_clean(document.getElementById("am_cw_hb_bh").value, false); 	// Typical withdrawal amount from own bank ("home bank") during business hours
+var nr_cw_hb_bh = document.getElementById("nr_cw_hb_bh").selectedIndex * monthscope;	// x times 
+var am_cw_hb_oh = indata_clean(document.getElementById("am_cw_hb_oh").value, false); 	// Typical withdrawal from own bank when closed
+var nr_cw_hb_oh = document.getElementById("nr_cw_hb_oh").selectedIndex * monthscope;	// x times
+var am_cw_ch = indata_clean(document.getElementById("am_cw_ch").value, false); 		// Typical withdrawal amount from own bank at the counter
+var nr_cw_ch = document.getElementById("nr_cw_ch").selectedIndex * monthscope;		// x times
+var am_cw_sh = indata_clean(document.getElementById("am_cw_sh").value, false); 		// Typical cash withdrawal in a shop
+var nr_cw_sh = document.getElementById("nr_cw_sh").selectedIndex * monthscope;		// x times
+var am_cu_hb = indata_clean(document.getElementById("am_cu_hb").value, false); 		// Typical foreign currency amount withdrawal in own banks cash machine
+var nr_cu_hb = document.getElementById("nr_cu_hb").selectedIndex * monthscope;		// x times
+var am_cw_ob_bh = indata_clean(document.getElementById("am_cw_ob_bh").value, false); 	// Typical withdrawal from other bank during business hours
+var nr_cw_ob_bh = document.getElementById("nr_cw_ob_bh").selectedIndex * monthscope;	// x times
+var am_cw_ob_oh = indata_clean(document.getElementById("am_cw_ob_oh").value, false); 	// Typical withdrawal from other bank when closed
+var nr_cw_ob_oh = document.getElementById("nr_cw_ob_oh").selectedIndex * monthscope;	// x times
+var am_cw_co = indata_clean(document.getElementById("am_cw_co").value, false); 		// Typical withdrawal from other bank at the counter
+var nr_cw_co = document.getElementById("nr_cw_co").selectedIndex * monthscope;		// x times
+var am_cw_eu = indata_clean(document.getElementById("am_cw_eu").value, false); 		// Typical withdrawal abroad, but inside Europe
+var nr_cw_eu = document.getElementById("nr_cw_eu").selectedIndex;			// x times
+var am_cw_wo = indata_clean(document.getElementById("am_cw_wo").value, false); 		// Typical withdrawal outside Europe
+var nr_cw_wo = document.getElementById("nr_cw_wo").selectedIndex;			// x times
+var am_pu_do = indata_clean(document.getElementById("am_pu_do").value, false); 		// Purchase domestically 
+var nr_pu_do = document.getElementById("nr_pu_do").selectedIndex;			// x times
+var am_pu_eu = indata_clean(document.getElementById("am_pu_eu").value, false); 		// Purchase abroad, but inside Europe
+var nr_pu_eu = document.getElementById("nr_pu_eu").selectedIndex;			// x times
+var am_pu_wo = indata_clean(document.getElementById("am_pu_wo").value, false); 		// Purchase outside Europe
+var nr_pu_wo = document.getElementById("nr_pu_wo").selectedIndex;			// x times
+var am_tr = indata_clean(document.getElementById("am_tr").value, false); 		// Transfer from credit card to ordinary account 1)
+var nr_tr = document.getElementById("nr_tr").selectedIndex;				// x times
+var am_bi = indata_clean(document.getElementById("am_bi").value, false); 		// Payment of bills from the credit card account 1)
+var nr_bi = document.getElementById("nr_bi").selectedIndex;				// x times
+var am_mo = indata_clean(document.getElementById("am_mo").value, false); 		// Payment with mobile phone 1)
+var nr_mo = document.getElementById("nr_mo").selectedIndex;				// x times
+var payb_months = indata_clean(document.getElementById("pt").value, false); 		// Loan to be paid down to zero over this number of months
+
+
+
+// Illustrative fees, entered by us in calculator (currently not in database, but planned for a new "Datafanger"):
+
+var ans = readfees(am_cw_wo, 'cw_wo');
+var cw_wo_ff = ans[0];	// Fixed fee for cash withdrawals abroad outside Europe
+var cw_wo_pf = ans[1];	// Percentage fee for cash withdrawals abroad outside Europe
+
+ans = readfees(am_pu_wo, 'pu_wo');
+var pu_wo_ff = ans[0];	// Fixed fee purchase abroad outside Europe
+var pu_wo_pf = ans[1];	// Percentage fee purchase  abroad outside Europe
+
+ans = readfees(am_cw_ch, 'cw_ch');
+var cw_ch_ff = ans[0];	// Fixed fee for cash withdrawal at own bank's counter
+var cw_ch_pf = ans[1];	// Percentage fee for cash withdrawal at own bank's counter
+
+ans = readfees(am_cw_co, 'cw_co');
+var cw_co_ff = ans[0];	// Fixed fee for cash withdrawal at other bank's counter
+var cw_co_pf = ans[1];	// Percentage fee for cash withdrawal at other bank's counter
+
+ans = readfees(am_cu_hb, 'cu_hb');
+var cu_hb_ff = ans[0];	// Fixed fee for currency withdrawal in own bank's cash machine. (NOT an exchange fee).
+var cu_hb_pf = ans[1];	// Percentage fee for currency withdrawal in own bank's cash machine. (NOT an exchange fee).
+
+ans = readfees(am_tr, 'tr');
+var tr_ff = ans[0];	// Fixed fee for transfering cash from credit card to bank account
+var tr_pf = ans[1];	// Percentage fee for transfering cash from credit card to bank account
+
+ans = readfees(am_bi, 'bi');
+var bi_ff = ans[0];	// Fixed fee when paying bills from the credit card in the internet bank
+var bi_pf = ans[1];	// Percentage fee when paying bills from the credit card in the internet bank
+
+ans = readfees(am_mo, 'mo');
+var mo_ff = ans[0];	// Fixed fee when paying with the mobile phone, charging the credit card
+var mo_pf = ans[1];	// Percentage fee when paying with the mobile phone, charging the credit card
+	
+ans = readfees(am_cw_sh, 'cw_sh');
+var cw_sh_ff = ans[0];	// Fixed fee when withdrawing cash in a shop
+var cw_sh_pf = ans[1];	// Percentage fee when withdrawing cash in a shop
+
+ans = readfees(am_pu_eu, 'pu_eu');
+var pu_eu_ff = ans[0];	// Fixed fee for international purchases inside Europe 
+var pu_eu_pf = ans[1];	// Percentage fee for international purchases inside Europe 
+
+ans = readfees(am_cw_wo, 'cw_wo');
+var cw_wo_ff = ans[0];	// Fixed fee for cash withdrawals outside Europe 
+var cw_wo_pf = ans[1];	// Percentage fee for cash withdrawals outside Europe 
+
+var pe_pf = indata_clean(document.getElementById("pe_pf_01").value, false);		// Periodic (monthly) fee as percentage of credit limit ONLY PERCENTAGE IN INTERFACE!!!
+
+var pu_do_pf = indata_clean(document.getElementById("pu_do_pf_01").value, false);	// Percentage fee for domestic purchases
+
+var pb_ff = indata_clean(document.getElementById("pb_ff").value, false); // Fee for receiving paper bills in the snail mail
+
+var o_ff = indata_clean(document.getElementById("o_ff").value, false);			// Origination fee (one-time fixed fee paid when establishing the credit line)
+
+var round_direction = document.getElementById("round_rule").selectedIndex;		// Nearest, up, or down?
+
+var round_presision = document.getElementById("round_pres").selectedIndex;		// Nearest whole currency unit og 1/100 of this?
+
+var remainder_handling = document.getElementById("rem_place").selectedIndex;		// Add remainder to last term og discard?
+
+
+
+// Miscancellous:
+
+var paperbill = document.getElementById("snail").checked;				// Monthly bills in the snail mail? (Yes/No)	RATHER AS USER DATA?
+var creditlimit = indata_clean(document.getElementById("limit").value, false);		// My real or assumed credit limit		RATHER AS USER DATA?
+
+
+// Administrator rules:
+
+var cash_increase = indata_clean(document.getElementById("ic").value, false); 		// Increase cash interest rate by this amount (as an illustration) 2)
+var include_currency = document.getElementById("currfee").checked; 			// As default, currency exchange fees are not included in effective interest rate, only in total payment. If 'include_currency' == true, it is included also in effective rate.
+
+
+// Net cash withdrawals and net purchases (before fees):
+
+
+var sum_cash = am_cw_hb_bh * nr_cw_hb_bh;	// Cash withdrawal and fees from own bank during business hours
+sum_cash += am_cw_hb_oh * nr_cw_hb_oh;		// Cash withdrawal and fees from own bank outside business hours
+sum_cash += am_cw_ch * nr_cw_ch;		// Cash withdrawal and fees when withdrawing at counter at own bank
+sum_cash += am_cw_sh * nr_cw_sh;		// Cash withdrawal and fees when withdrawing cash in a shop
+sum_cash += am_cu_hb * nr_cu_hb;		// Domestic currency withdrawal in own bank's machine
+sum_cash += am_cw_ob_bh * nr_cw_ob_bh;		// Domestic cash machine withdrawal during other bank's opening hours	
+sum_cash += am_cw_ob_oh * nr_cw_ob_oh;		// Domestic cash machine withdrawal when other bank is closed	
+sum_cash += am_cw_co * nr_cw_co;		// Domestic withdrawal at the counter of other bank
+sum_cash += am_cw_eu * nr_cw_eu;		// Cash withdrawal in Europe outside Norway
+sum_cash += am_cw_wo * nr_cw_wo;		// Cash withdrawal outside Europe
+
+// Transfer to own account and bill payment are currently categorized as cash withdrawals: MUST BE MAPPED TO CURRENT DB VALUES
+
+sum_cash += am_tr * nr_tr;			// Transfer to own account from credit card account
+sum_cash += am_bi * nr_bi;			// Bill payment from credit card account
+
+
+var sum_purc = am_pu_do * nr_pu_do;		// Domestic purchase	
+sum_purc += am_pu_eu * nr_pu_eu;		// Purchase in Europe (except home country)	
+sum_purc += am_pu_wo * nr_pu_wo;		// Purchase outside Europa
+
+// Mobile payment is currently categorized as a purchase:
+
+sum_purc += am_mo * nr_mo;		// Mobile payment
+
+
+// Variables outside the loop:
+
+var i;
+var resarray = new Array();
+var num_cards = creditmatrix.length;
+
+// Variables which are assigned new values for each bank while looping through the database:
+
+var issuer, cardname, an_ff, an_pf, nom_rate_purc, rateperiod_purch, rateperiod_purch, interestfree_days;
+var pe_ff, cw_hb_bh_ff, cw_hb_oh_ff, cw_ob_bh_ff, cw_ob_oh_ff;
+var cw_do_pf, cw_eu_pf, cw_eu_ff, ex_eu_pf, pu_do_ff, pu_eu_ff;
+
+var pfee_change;
+var sum_cash_trans_fees, sum_purc_trans_fees, nom_rate_cash;
+var term_fee;	 
+
+
+// The loop:
+var pureResults = [];
+for (i=1;i<num_cards;i++)
+	{
+
+	// Reading card prices and terms from database 'creditmatrix' into the variables:
+
+
+	issuer = emptytozero(creditmatrix[i][1]);
+	cardname = emptytozero(creditmatrix[i][3]);
+	an_ff = emptytozero(creditmatrix[i][6]);		// Fixed annual fee for holding the credit card, always paid in advance
+	an_pf  = emptytozero(creditmatrix[i][7]);		// Percentage annual fee for holding the credit card, as percentage of the credit limit, paid in advance
+	nom_rate_purc = emptytozero(creditmatrix[i][8]);	// Nominal interest rate for purchases (for everything unless a separate rate for cash is provided)
+	rateperiod_purc  = creditmatrix[i][9];			// The scope of the provided interest rate - month ("mnd") or year ("aar")
+	interestfree_days = emptytozero(creditmatrix[i][10]);	// Maximum number of interest free days for purchases
+	pe_ff = emptytozero(creditmatrix[i][11]);		// Fixed periodic fee to be paid with any downpay term, normally monthly.
+	cw_hb_bh_ff = emptytozero(creditmatrix[i][16]);		// Fixed fee, cash withdrawal from own bank during opening hours
+	cw_hb_oh_ff = emptytozero(creditmatrix[i][15]); 	// Fixed fee, cash withdrawal from own bank outside opening hours
+	cw_ob_bh_ff = emptytozero(creditmatrix[i][14]); 	// Fixed fee, cash withdrawal from other bank during opening hours
+	cw_ob_oh_ff = emptytozero(creditmatrix[i][13]);  	// Fixed fee, cash withdrawal from other bank outside opening hours
+	cw_do_pf = emptytozero(creditmatrix[i][17]); 		// Percentage fee, domestic cash withdrawal as a percentage of the withdrawal
+	cw_eu_pf = emptytozero(creditmatrix[i][19]);  		// Percentage fee, cash withdrawal abroad as a percentage of the withdrawal (in addition to an eventual currency fee)
+	cw_eu_ff = emptytozero(creditmatrix[i][20]);  		// Fixed fee, cash withdrawal abroad (fixed sum)
+	ex_eu_pf = emptytozero(creditmatrix[i][21]); 		// Percentage exchange fee, cash withdrawal abroad (percentage)
+	pu_do_ff = emptytozero(creditmatrix[i][23]); 		// Fixed fee purchase, domestically
+	pu_eu_ff = emptytozero(creditmatrix[i][24]);		// Fixed fee purchase abroad
+	minpay_perc = emptytozero(creditmatrix[i][25]); 	// Minimum, monthly payment as a percentage of used credit
+	minpay_units = emptytozero(creditmatrix[i][26]);	// Minimum, monthly payment in currency units (for example NOK)
+
+
+	// Should we include the currency exchange fee in the computation of effective interest rate? (It's still included in the total sum payed)
+
+	if (include_currency) pfee_change = ex_eu_pf; else pfee_change = 0;
+
+
+	// Fallback to common fees if illustrative fields (planned for a new "Datafanger") are empty:
+
+	if (cw_wo_ff == "" || cw_wo_ff == "0") cw_wo_ff = cw_eu_ff;		// General 'european' fixed cash withdrawal fee is applied to all foreign countries	
+	if (cw_wo_pf == "" || cw_wo_pf == "0") cw_wo_pf = cw_eu_pf;		// General 'european' percentual cash withdrawal fee is applied to all foreign countries
+	if (pu_wo_ff == "" || pu_wo_ff == "0") pu_wo_ff = pu_eu_ff;		// General 'european' fixed purchase fee is applied to all foreign countries	
+	if (pu_wo_pf == "" || pu_wo_pf == "0") pu_wo_pf = pu_eu_pf;		// General 'european' percentual purchase fee is applied to all foreign countries
+	if (cw_ch_ff == "" || cw_ch_ff == "0") cw_ch_ff = cw_hb_bh_ff;		// Normal fixed atm fee, when no separate fee is provided for withdrawal at own bank's counter
+	if (cw_ch_pf == "" || cw_ch_pf == "0") cw_ch_pf = cw_do_pf;		// Normal perc. atm fee, when no separate fee is provided for withdrawal at own bank's counter
+	if (cw_sh_ff == "" || cw_sh_ff == "0") cw_sh_ff = cw_hb_bh_ff;		// Normal fixed atm fee, when no separate fee is provided for withdrawal in a shop
+	if (cw_sh_pf == "" || cw_sh_pf == "0") cw_sh_pf = cw_do_pf;		// Normal perc. atm fee, when no separate fee is provided for withdrawal in a shop
+	if (cu_hb_ff == "" || cu_hb_ff == "0") cu_hb_ff = cw_hb_bh_ff;		// Normal fixed atm fee, when no separate fee is provided for currency withdrawal
+	if (cu_hb_pf == "" || cu_hb_pf == "0") cu_hb_pf = cw_do_pf;		// Normal perc. atm fee, when no separate fee is provided for currency withdrawal
+	if (cw_co_ff == "" || cw_co_ff == "0") cw_co_ff = cw_hb_bh_ff;		// Normal fixed atm fee, when no separate fee is provided for withdrawal at other bank's counter
+	if (cw_co_pf == "" || cw_co_pf == "0") cw_co_pf = cw_do_pf;		// Normal perc. atm fee, when no separate fee is provided for withdrawal at other bank's counter
+	if (pu_wo_ff == "" || pu_wo_ff == "0") pu_wo_ff = pu_eu_ff;		// Normal fixed fee for purchases abroad applied if no separate "extraeuropean" fee is provided	
+	if (pu_wo_pf == "" || pu_wo_pf == "0") pu_wo_pf = pu_eu_pf;		// Normal perc. fee for purchases abroad applied if no separate "extraeuropean" fee is provided	
+	if (mo_ff == "" || mo_ff == "0") mo_ff = pu_do_ff;			// Normal fixed fee for purchases with mobile phone if no separate fee is provided
+	if (mo_pf == "" || mo_pf == "0") mo_pf = pu_do_pf;			// Normal perc. fee for purchases with mobile phone if no separate fee is provided
+	
+
+	// (If fee for transfer to own account and fee for bill payment is not provided, it will here be considered free - nil)
+	
+	// Cash withdrawal transaction dependant fees, using function 'sumfees(sum, times, fixedfee, percentfee)':
+
+	sum_cash_trans_fees = sumfees(am_cw_hb_bh, nr_cw_hb_bh, cw_hb_bh_ff, cw_do_pf);			// Fee, cash withdrawal and fees from own bank during business hours
+	sum_cash_trans_fees += sumfees(am_cw_hb_oh, nr_cw_hb_oh, cw_hb_oh_ff, cw_do_pf);		// Fee, cash withdrawal and fees from own bank outside opening hours
+	sum_cash_trans_fees += sumfees(am_cw_ch, nr_cw_ch,  cw_ch_ff,  cw_ch_pf);			// Fee, cash withdrawal and fees when withdrawing at counter at own bank
+	sum_cash_trans_fees += sumfees(am_cw_sh, nr_cw_sh, cw_sh_ff, cw_sh_pf);				// Fee, cash withdrawal and fees when withdrawing cash in a shop
+	sum_cash_trans_fees += sumfees(am_cu_hb, nr_cu_hb, cu_hb_ff, eval(cu_hb_pf)+eval(pfee_change));	// Fee, domestic currency withdrawal in own bank's machine
+	sum_cash_trans_fees += sumfees(am_cw_ob_bh, nr_cw_ob_bh, cw_ob_bh_ff, cw_do_pf);		// Fee, domestic cash machine withdrawal during other bank's opening hours	
+	sum_cash_trans_fees += sumfees(am_cw_ob_oh, nr_cw_ob_oh, cw_ob_oh_ff, cw_do_pf);		// Fee, domestic cash machine withdrawal when other bank is closed	
+	sum_cash_trans_fees += sumfees(am_cw_co, nr_cw_co, cw_co_ff, cw_co_pf);				// Fee, domestic withdrawal at the counter of other bank
+	sum_cash_trans_fees += sumfees(am_cw_eu, nr_cw_eu, cw_eu_ff, eval(cw_eu_pf)+eval(pfee_change));	// Fee, cash withdrawal in Europe outside Norway
+	sum_cash_trans_fees += sumfees(am_cw_wo, nr_cw_wo, cw_wo_ff, eval(cw_wo_pf)+eval(pfee_change));	// Fee, cash withdrawal outside Europe
+
+
+	// Fees for transfer to own account and bill payment are currently categorized as cash withdrawals:
+
+	sum_cash_trans_fees += sumfees(am_tr, nr_tr, tr_ff, tr_pf);					// Transfer to own account from credit card account
+	sum_cash_trans_fees += sumfees(am_bi, nr_bi, bi_ff, bi_pf);					// Bill payment from credit card account
+
+
+	// Transaction fees pertaining to purchases:
+
+	sum_purc_trans_fees = sumfees(am_pu_do, nr_pu_do, pu_do_ff, pu_do_pf);				// Domestic purchase fees	
+	sum_purc_trans_fees += sumfees(am_pu_eu, nr_pu_eu, pu_eu_ff, eval(pu_eu_pf)+eval(pfee_change));	// Fee, purchase in Europe (except home country) f	
+	sum_purc_trans_fees += sumfees(am_pu_wo, nr_pu_wo, pu_wo_ff, eval(pu_wo_pf)+eval(pfee_change));	// Fee, purchase outside Europa
+	sum_purc_trans_fees += sumfees(am_mo, nr_mo, mo_ff, mo_pf);					// Fee, mobile payment
+
+
+	/* For each monthly payment, there might be "payback fees": One fixed fee is common. There are also companies charging a monthly fee as a 
+	a percentage of the credit limit. Normal fees usually pertain to the debt being serviced electronically. If you want a paper bill, there is
+	an additional fee for that. We collect all these sums, that don't change during the payment period, in the variable 'term_fee':*/
+
+	term_fee = eval(pe_ff) + (pe_pf * creditlimit / 100); // Term fee
+
+	if (paperbill) term_fee += eval(pb_ff); // Paper bill fee
+
+	/* The percentage annual fee, an_pf, is computed as a fraction of the credit limit. The credit limit is assumed fixed throughout the loan period, thus the 
+	fee is fixed too. Hence, we can add it to the fixed fee: */
+
+	ann_fee = an_ff +  (an_pf * creditlimit / 100);
+
+	
+	/*  Annual interest rates for purchase and cash withdrawal
+
+	Mathematically, it is incorrect to simply multiply the monthly interest rate with 12 to obtain the annual interest rate. This is still done here, 
+	in order to mirror what both the companies that report monthly rate and the companies that report annual rate actually do: A company reporting
+	6% annual, nominal interest rate will charge 0.5% per month (6/12). This is not mathematically correct, as this method does not encompass the 
+	compounded interest rate at each capitalization within each year. But as long as this is how the bank actually acts, we will only be able to 
+	compute the correct monthly payment by doing likewise. For symmetry, we also multiply monthly rates with 12. */	
+
+	if (rateperiod_purc == "mnd") nom_rate_purc = nom_rate_purc * 12;	// "mnd" means month. As of July 2013, this is the common rate for purchase and withdrawals.	
+
+
+	// Separate nominal rate for cash withdrawals is currently not harvested. But for testing, we can add a common increment in the calculator:
+
+	if (isNaN(cash_increase) || cash_increase == 0) nom_rate_cash = nom_rate_purc;
+	else nom_rate_cash = eval(nom_rate_purc) + eval(cash_increase);
+
+	// Using function creditCard(cash, purchase, numberofmonths, interestfree_days, round_direction, round_presision, remainder_handling, ignore_origination, fee_cash_transaction, fee_purc_transaction,fee_origination, fee_annual, fee_period, rate_cash, rate_purchase)
+	
+	er = creditCard(sum_cash, sum_purc, payb_months, interestfree_days, round_direction, round_presision, remainder_handling, false, sum_cash_trans_fees, sum_purc_trans_fees, o_ff, ann_fee, term_fee, nom_rate_cash, nom_rate_purc, minpay_perc, minpay_units);
+    pureResults.push(er);
+	
+	/* The function returns an array:
+
+	er[0] -> Effective, annual interest rate without taking an eventual interest free period into account ("government template")
+	er[1] -> The monthly payment, when we apply the "government template"
+	er[2] -> Effective, annual interest rate when taking an eventual interest free period into account
+	er[3] -> The monthly payment when we take the interest free period into account
+	er[4] -> The remainder
+
+
+	Putting the results into a result array / matrix: */
+
+	resarray[i] = new Array();
+
+	resarray[i][0] = "<a href="+creditmatrix[i][0]+">"+creditmatrix[i][1]+"</a>";
+
+	if (!Array.isArray(er)) resarray[i][1] = 1000000;	// function 'creditCard()' returned an error code
+	else
+		{
+	
+	
+		resarray[i][1] = eval(er[3]);	// The monthly payment when we take the interest free period into account
+	
+		resarray[i][2] = eval(er[1]);	// Monthly payback amount, computed according to the government method
+	
+		resarray[i][3] = eval(er[0]);	// Effective, annual interest rate (EAPR), computed according to the government method
+
+		var total = er[1] * payb_months;// THe monthly payback, multiplied with the number of months
+
+		total += eval(er[4]);		// Adding the remainder (netgative number -> in favour of the customer)
+	
+		resarray[i][4] = total; 	// The total sum paid is the (annuity x number of periods) + remainder
+	
+		resarray[i][5] = eval(er[2]);	// Effective, annual interest rate when taking an eventual interest free period into account
+
+		}
+	}
+
+var jsonResultFormat = [];
+for(var i = 0; i < pureResults.length; i++) {
+    var curResult = pureResults[i];
+    if(isNaN(curResult)) {
+	    jsonResultFormat.push({
+	        governmentEffectiveRate: curResult[0],
+	        governmentMonthlyPayment: curResult[1],
+	        effectiveRate: curResult[2],
+	        monthlyPayment: curResult[3],
+	        remainder: curResult[4]
+	    });
+    } else {
+        jsonResultFormat.push({
+            error: -11
+        });
+    }
+}
+
+console.log(JSON.stringify(jsonResultFormat, null, "\t"));
+
+// Sorting resultmatrix 'resarray':
+
+resarray = quick_sort(resarray, 1);
+
+// Placing values from 'resarray' into the html table 'tabletext':
+
+var tabletext = "<table><tr><td>Net cash withdrawals: </td><td align=right>"+sum_cash+"</td><td>&nbsp;</td><td>Net purchases: </td><td align=right>"+sum_purc+"</td><td colspan=2>&nbsp;</td></tr>";
+tabletext +="<tr><td colspan = 7>&nbsp;</td></tr>";
+tabletext +='<tr style="font-weight: bold; vertical-align:text-top"><td>Company</td><td title="Monthly payback amount, computed according to a model provided by the consumer ombudsman">Government rules payment</td><td title="Effective, annual interest rate (EAPR), computed according to a model provided by the consumer ombudsman">Government rules rate</td><td title="Monthly payment where the interest free period is taken into account.">"Real" payment</td><td title="Effective interest rate where the interest free period is taken into account.">"Real" rate</td><td title="According to a realistic payback schedule, interest free periods taken into account">Total amount paid</td></tr>';
+
+for (i=1;i<resarray.length;i++) 
+	{
+
+	if (resarray[i][1] == 1000000) tabletext +="<tr><td>"+resarray[i][0]+"</td><td colspan = 6>Velg kortere løpetid!  / Choose shorter payback period!</td></tr>";
+
+	else tabletext +="<tr><td>"+resarray[i][0]+"</td><td>"+resarray[i][2]+"</td><td>"+resarray[i][3]+"</td><td>"+resarray[i][1]+"</td><td>"+resarray[i][5]+"</td><td>"+resarray[i][4]+"</td></tr>\r\n";
+
+	}
+
+	tabletext +="</table>";
+
+// Writing 'tabletext'out in a 'div':
+
+document.getElementById("sumfield").innerHTML = tabletext;
+
+/* END function 'cardBench()' */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function readfees(usesum, feename)
+{
+/* Reads and computes fees orginataing from "administrator" user interface. In this preliminary test client, the fixed fee and the percentage
+fee are both returned as price and percentage, respectively. This is the case, even it there might be several segments of the fee. */
+
+var fixedfee, pecentagefee,currencyfee;
+
+var highname = feename+"_hi_01";
+if (document.getElementById(highname)) var highlimit = document.getElementById(highname).value; // Normally "Unlimited", but might have a value, in which case there are more segments.
+
+var fixedname = feename+"_ff_01";
+if (document.getElementById(fixedname)) fixedfee = document.getElementById(fixedname).value;
+else fixedfee = 0;
+
+var percentname = feename+"_pf_01";
+if (document.getElementById(percentname)) percentagefee = document.getElementById(percentname).value;
+else percentagefee = 0;
+
+var currname = feename+"_ex_01";
+if (document.getElementById(currname)) currencyfee = document.getElementById(currname).value;
+else currencyfee = 0;
+
+if (feename == "pe_pf") alert(feename);
+
+i=2;
+
+while (isNaN(highlimit) == false && eval(highlimit) < usesum) // If "highlimit" is numeric, and the value smaller than our withdrawal / purchase..
+	{
+
+	highname = feename+"_hi_0"+i;
+ 	highlimit = document.getElementById(highname).value; // Normally "Unlimited", but might have a value, in which case there are more segments.
+
+	fixedname = feename+"_ff_0"+i;
+	fixedfee = document.getElementById(fixedname).value;
+
+	percentname = feename+"_pf_0"+i;
+	percentagefee = document.getElementById(percentname).value;
+
+	currname = feename+"_ex_0"+i;
+	currencyfee = document.getElementById(currname).value;
+
+	i++;
+
+	}
+
+ff = fixedfee;					// We don't sum the fixed fee over the segments. Only one is valid.
+pf = (eval(percentagefee) + eval(currencyfee));	// These two fees are percentages of the same amount
+
+var minname = feename+"_mi_0"+(i-1);
+var minvalue = eval(document.getElementById(minname).value);
+
+var sumfees = eval(ff) + eval(pf * usesum/100);
+
+/* If the sum of the percentage fee and the fixed fee does not surpass the minimum fee, we use the minimum fee as fixed fee
+and set the percentage fee to zero. In other words: In our interpretation, the minimum applies to the sum of all fees. */
+
+if (sumfees < minvalue) answ = new Array(minvalue, 0);
+else answ = new Array(ff, pf);
+
+return answ;
+
+/* END function 'readfees()'*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function showandadd(sum, times, fixedfee, percentfee, postname, prodnr)
+{
+if (sum > 0 && times > 0) return (eval(sum) + eval(fixedfee) + sum*percentfee/100) * times;
+
+else return 0;
+
+/*END 'showandadd' */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function sumfees(sum, times, fixedfee, percentfee)
+{
+if (times > 0 && sum > 0) return  times * (eval(fixedfee) + eval(sum*percentfee/100));
+else return 0;
+
+/*END 'sumfees' */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function addaRow(caller)
+{
+/* This function adds a row in the preliminary "datafanger" for this test client. The purpose is to be able to present fees in different
+segments of the withdrawal / purchase amount */
+
+// We retrive the number of the input the caller resides in:
+
+var idnum = eval((caller.id.substring(caller.id.length-2,caller.id.length)).valueOf());
+
+// The new row is going to have one number higher:
+
+idnum++;
+
+if (idnum < 10) idnum = "0"+idnum;					// Increasing id number by one
+
+var cellnums = caller.parentNode.parentNode.parentNode.cells.length; 	// The grand-grand father of the input element is the table row
+var clonerow = caller.parentNode.parentNode.parentNode.cloneNode(true);	// Row copied from the calling row
+var newRow = caller.parentNode.parentNode.parentNode.parentNode.insertRow(eval(caller.parentNode.parentNode.parentNode.rowIndex)+eval(1));
+
+// We fill the new row with cells copied from the first:
+
+var oldChild, newChild, newC;
+
+for (i=0;i<cellnums;i++) 
+	{
+
+	oldChild = newRow.insertCell(i);
+	newChild = clonerow.cells[i].cloneNode(true);
+	newC = newRow.replaceChild(newChild,oldChild);
+	if (i == 0) 
+		{
+		newRow.cells[i].setAttribute('title', 'The upper limit of the last/highest segment must be "Unlimited".'); 
+		newRow.cells[i].innerHTML = "";	// The added rows don't need to copy the lead text
+		}
+	}
+
+// We give the new input elements new id's:
+
+var inputnum = newRow.getElementsByTagName('input').length;
+
+var oldId, oldIdTxt, minid, maxid;
+
+for (i=0;i<inputnum;i++) 
+	{
+
+	oldId = newRow.getElementsByTagName('input')[i].getAttribute("id");		// Retrive the id of the input element in the old row
+
+	oldIdTxt = oldId.substring(0 , oldId.length-2);					// Retrive the text part of the id (that always ends in a two digit number)
+
+	newRow.getElementsByTagName('input')[i].setAttribute("id", oldIdTxt+idnum);	// Give the corresponding input element in the new row new id
+
+	if (oldId.indexOf("lo") !=-1) minid = oldIdTxt+idnum;	// Remember the id of the input containing the minimum value
+		
+	if (oldId.indexOf("hi") !=-1) maxid = oldIdTxt+idnum;	// Remember the id of the input containing the maximum value
+
+	}
+
+// Assigning the maximum value of the old row to the minimum value in the new:
+
+document.getElementById(minid).value = document.getElementById(maxid).value;
+
+document.getElementById(maxid).value = "Unlimited";
+
+
+// Attaching some style to the new row:
+
+newRow.setAttribute('class', 'grey');
+
+
+// Adding a close-option to the new row
+
+newRow.cells[cellnums-1].innerHTML='<a target=javascript(void) onClick=deleteaRow(this) style="font-weight: bold; color: red;"><b><u>&nbsp;x&nbsp;</u></b></a>';
+
+
+// The old row should not be able to create a new row:
+
+var oldinput =  caller.parentNode.parentNode.parentNode.cells[2].getElementsByTagName('input')[0];
+
+oldinput.setAttribute("onchange", "");
+
+
+// Only the new row should have a closing option. It the old had one, we remove it:
+
+
+if (caller.parentNode.parentNode.parentNode.cells[cellnums-1].getElementsByTagName('a')[0])
+	{
+
+	var oldclose = caller.parentNode.parentNode.parentNode.cells[cellnums-1].getElementsByTagName('a')[0];
+
+	oldclose.outerHTML = "";
+
+	}
+
+
+/* END function 'addaRow()'*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function deleteaRow(caller)
+{
+/* This function deletes a row in the preliminary "datafanger" for this test client.  */
+
+// We retrive the number of the input the caller resides in:
+
+var thisrow = caller.parentNode.parentNode.parentNode.rows[caller.parentNode.parentNode.rowIndex];	// A reference to this row
+var prevrow = caller.parentNode.parentNode.parentNode.rows[caller.parentNode.parentNode.rowIndex-1];	// A reference to the previous row
+	
+var thisId = thisrow.cells[2].childNodes[0].getElementsByTagName('input')[0].id;			// The id of cells[2]'s input element in this row
+var preId = prevrow.cells[2].childNodes[0].getElementsByTagName('input')[0].id;				// The id of cells[2]'s input element in the previous row
+
+var thisIdNum = eval(thisId.substring(thisId.length-2,thisId.length).valueOf());			// The appended number at the end of the id.
+
+
+waste = caller.parentNode.parentNode;
+waste.parentNode.removeChild(waste); 
+
+/* We want new rows - that are designed to present additional fee segments - to be opened chronogically and closed in the opposite sequence.
+
+Thus, only the last created row will have a closing option. And only the same row can create a new row under it. 
+
+If 'idnum' is higher than two, the deleting order orginates from a row previously created with addaRow() where the previous
+
+row lacks a closing option. For the user to be able to close it, we must add bot a closing and a "create new" option to the previous row. */
+
+
+if (thisIdNum > 2) prevrow.cells[prevrow.cells.length-1].innerHTML='<a target=javascript(void) onClick=deleteaRow(this) style="font-weight: bold; color: red;"><b><u>&nbsp;x&nbsp;</u></b></a>';
+
+if (thisIdNum > 1) document.getElementById(preId).setAttribute("onChange", "addaRow(this)");
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+</script>
+<style>
+body {font-family: arial; font-size: 9pt}
+table {font-size: 9pt;width: 1000px}
+h2 {font-size: 16pt}
+input[type="text"] {width: 100px; text-align:right}
+select {width: 400px}
+.gul {background: #ffffdd}
+.grey {background: #dedede}
+.ros  {background: #99ffff}
+.labeltext {width: 430px}
+.numselect {width:40px;text-align:left}
+#graphSpace { margin-left:80px; }
+</style>
+</head>
+<body>
+
+
+
+
+
+<h2>Credit card</h2>
+<a href="http://jiffymade.com/dev/fp/lag_kredittkort_data.php">Refresh credit card data</a> (takes a few seconds).
+<table border="0">
+<tbody><tr class="gul"><td colspan="8" class="labeltext"><b><i>Cash withdrawals:</i></b></td></tr>
+
+
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each domestic cash machine withdrawal during own bank's opening hours</td><td style="{width:120px}"><input id="am_cw_hb_bh" type="text"></td><td colspan="2">Withdrawals per month</td><td title="The number of withdrawals per month"><select id="nr_cw_hb_bh" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each domestic cash machine withdrawal from own bank when it is closed</td><td><input id="am_cw_hb_oh" value="1000" type="text"></td><td colspan="2">Withdrawals per month</td><td title="The number of withdrawals per month"><select id="nr_cw_hb_oh" class="numselect"><option value="0">0</option><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each domestic cash withdrawal at the counter of own bank</td><td><input id="am_cw_ch" type="text"></td><td colspan="2">Withdrawals per month</td><td title="The number of withdrawals per month"><select id="nr_cw_ch" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each domestic cash withdrawal in shop</td><td><input id="am_cw_sh" type="text"></td><td colspan="2">Withdrawals per month</td><td title="The number of withdrawals per month"><select id="nr_cw_sh" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each domestic currency withdrawal in own bank's machine</td><td><input id="am_cu_hb" type="text"></td><td colspan="2">Withdrawals per month</td><td title="The number of withdrawals per month"><select id="nr_cu_hb" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each domestic cash machine withdrawal during other bank's opening hours</td><td><input id="am_cw_ob_bh" type="text"></td><td colspan="2">Withdrawals per month</td><td title="The number of withdrawals per month"><select id="nr_cw_ob_bh" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each domestic cash machine withdrawal when other bank is closed</td><td><input id="am_cw_ob_oh" type="text"></td><td colspan="2">Withdrawals per month</td><td title="The number of withdrawals per month"><select id="nr_cw_ob_oh" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each domestic withdrawal at the counter of other bank</td><td><input id="am_cw_co" type="text"></td><td colspan="2">Withdrawals per month</td><td title="The number of withdrawals per month"><select id="nr_cw_co" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each cash withdrawal in Europe outside Norway</td><td><input id="am_cw_eu" value="1000" type="text"></td><td colspan="2">Withdrawals per year</td><td title="The number of withdrawals per year"><select id="nr_cw_eu" class="numselect"><option value="0">0</option><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Provide the typical amount that is withdrawn each time."><td colspan="3" class="labeltext">Each cash withdrawal outside Europe</td><td><input id="am_cw_wo" <="" td="" type="text"></td><td colspan="2">Withdrawals per year</td><td title="The number of withdrawals per year"><select id="nr_cw_wo" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+
+<tr class="gul"><td colspan="8" class="labeltext"><i><b>Purchases:</b></i></td></tr>
+
+<tr class="gul" title="Provide the typical amount that is used for purchase each time."><td colspan="3" class="labeltext">Each domestic purchase</td><td><input id="am_pu_do" value="1000" type="text"></td><td colspan="2">Purchases per month</td><td title="The number of purchases per month"><select id="nr_pu_do" class="numselect"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option selected="selected" value="10">10</option></select></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Provide the typical amount that is used for purchase each time."><td colspan="3" class="labeltext">Each purchase in Europe outside Norway</td><td><input id="am_pu_eu" value="1000" type="text"></td><td colspan="2">Purchases per year </td><td title="The number of purchases per year"><select id="nr_pu_eu" class="numselect"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option selected="selected" value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Provide the typical amount that is used for purchase each time."><td colspan="3" class="labeltext">Each purchase outside Europe</td><td><input id="am_pu_wo" type="text"></td><td colspan="2">Purchases per year </td><td title="The number of purchases per year"><select id="nr_pu_wo" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+
+<tr class="gul"><td colspan="8" class="labeltext"><i><b>Bills, mobile, transfer:</b></i></td></tr>
+
+<tr class="gul" title="Provide the typical amount you might transfer from the credit card to your ordinary bank account (currently unsupported in Datafanger)."><td colspan="3" class="labeltext">Each transfer to account</td><td><input id="am_tr" type="text"></td><td colspan="2">Transfers per year </td><td title="The number of transfers per year"><select id="nr_tr" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+
+<tr class="gul" title="Provide the typical size of the ordinary bills you pay with the credit card (currently unsupported in Datafanger)."><td colspan="3" class="labeltext">Each bill payment</td><td><input id="am_bi" type="text"></td><td colspan="2">Bills per year </td><td title="Bills paid per year"><select id="nr_bi" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Provide the typical amount that you pay with mobile payment in the shop (currently unsupported in Datafanger)."><td colspan="3" class="labeltext">Each mobile payment</td><td><input id="am_mo" type="text"></td><td colspan="2">Mobile payments per year </td><td title="The number of mobile payments per year"><select id="nr_mo" class="numselect"><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td>&nbsp;</td></tr>
+
+<tr class="gul" title="Months from you aquire the card until debt is paid down to zero"><td colspan="3" class="labeltext">Payback time (in number of months)</td><td colspan="4"><input id="pt" value="12" type="text"></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Most issures charge you extra if you want paper bills via snail mail."><td colspan="3" class="labeltext">Monthly bills in the snail mail?</td><td align="right"><input id="snail" type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td colspan="3"></td><td>&nbsp;</td></tr>
+<tr class="gul" title="Some fees might be a function of the card's credit limit (as opposed to currently drawn credit)."><td colspan="3" class="labeltext">Credit limit</td><td colspan="4"><input id="limit" value="100.000" type="text"></td><td>&nbsp;</td></tr>
+
+<tr class="grey"><td colspan="8" class="labeltext"><i><b>For test purposes: Manually enter fees currently not collected in Datafanger</b></i></td></tr>
+
+
+<!--
+
+Naming conventions:
+
+
+Type of fee:
+
+ff - fixed fee
+pf - percentage fee
+ex - exchange fee
+pe - periodic fee (for instance per month, not per transaction)
+
+
+Segment:
+
+lo - low (from low limit)
+hi - high (to high limit)
+
+
+Type of transaction:
+
+cw - cash withdrawal
+pu - purchase
+tr - transfer to account
+mo - mobile payment
+cu - currency withdrawal
+bi - paying bills in the internet bank with your credit card
+
+
+Where:
+
+hb - home bank (user's current bank) cash machine
+ch - at the counter of home bank
+ob - other bank's cash machine
+co - at the counter of other bank
+sh - in a shop
+do - domestically
+eu - abroad, inside europe
+wo - outside europe
+
+
+When:
+
+bh - business hours
+oh - other hours
+
+
+Minimum rule:
+
+mi - the combined fixed and percentage fee can not be lower
+
+
+Segment number:
+
+01, 02, 03 etc
+
+
+Example:
+
+pu_wo_ff_01 	- fixed fee for purchase outside europe, segment one
+pu_wo_pf_01 	- percentage fee for purchase outside europe, segment one
+pu_wo_lo_01 	- lower amount limit for fixed fee for purchase outside europe, segment one
+pu_wo_hi_01 	- higher amount limit for fixed fee for purchase outside europe, segment one
+pu_wo_mi_01 	- minimum amount in fee for the transaction fee for purchase outside europe (sum of fixed and percentage fee)
+pu_wo_ex_01 	- percentage currency exchange fee for purchase outside europe in addition to other fees.
+
+pu_wo		- purchase outside europe
+cw_ch		- cash withdrawal at the counter of home bank
+cw_co		- cash withdrawal at the counter of other bank	
+cu_hb		- currency withdrawal in own bank (cash machine)
+cw_sh		- cash withdrawal in a shop
+tr		- transfer money from your credit card to your ordinary bank account
+bi		- paying bills in the internet bank with the creditcard
+mo		- paying with the mobile phone in a shop
+pu_do 		- fee for domestic purchases
+pu_eu 		- fee for purchases abroad, but within Europe
+o		- origination fee (one time fee at the startup of the card)
+cw_wo		- cash withdrawals outside Europe
+pb		- paper bill in the snail mail
+
+-->
+
+
+<tr class="grey">
+<td>&nbsp;</td>
+<td title="The lowest transaction amount from which this fee amounts. ">Amount - low limit</td>
+<td title="The highest transaction amount from which this fee amounts. A positive integer adds a new row to the table">Amount - high limit </td>
+<td title="Fixed fee for each transaction (withdrawal/purchase).">Fixed fee</td>
+<td title="Fee as a percentage of the withdrawal/purchase.">Percentage fee</td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount.">Minimum fee</td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee.">Exchange fee</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr class="grey">
+<td title="Dedicated fee for purchase outside Europe. Currently, this is not supported by Datafanger, but we can simulate the effect here. If the field is empty, the general fee for purchases abroad is used.">Fee for purchases outside Europe </td>
+<td title="Empty or 0 = zero"><nobr>From <input id="pu_wo_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited."><nobr>To <input id="pu_wo_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="pu_wo_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="pu_wo_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="pu_wo_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="pu_wo_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Dedicated fee for cash withdrawal at the counter of own bank. Currently, this is not supported by Datafanger, but we can simulate the effect here. If the field is empty, the cash machine fee is used.">Fee when withdrawing cash at the counter of own bank</td>
+<td title="Empty or 0 = zero"><nobr>From <input id="cw_ch_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited. A positive integer adds a new row to the table"><nobr>To <input id="cw_ch_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="cw_ch_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="cw_ch_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="cw_ch_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="cw_ch_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Dedicated fee for cash withdrawal at the counter of other bank. Currently, this is not supported by Datafanger, but we can simulate the effect here. If the field is empty, the cash machine fee is used.">Fee when withdrawing cash at the counter of other bank</td>
+<td title="Empty or 0 = zero"><nobr>From <input id="cw_co_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited. A positive integer adds a new row to the table"><nobr>To <input id="cw_co_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="cw_co_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="cw_co_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="cw_co_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="cw_co_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+<tr class="grey">
+<td title="Dedicated fee for withdrawing foreign currency in own bank" s="" cash="" machine="" (domestically).="" currently,="" this="" is="" not="" supported="" by="" datafanger,="" but="" we="" can="" simulate="" the="" effect="" here.="" if="" field="" empty,="" ordinary="" fee="" used..'="">Fee when withdrawing currency in own bank's cash machine </td>
+<td title="Empty or 0 = zero"><nobr>From <input id="cu_hb_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited. A positive integer adds a new row to the table"><nobr>To <input id="cu_hb_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="cu_hb_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="cu_hb_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="cu_hb_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="cu_hb_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Dedicated fee for withdrawing cash in a shop. Currently, this is not supported by Datafanger, but we can simulate the effect here.">Fee when withdrawing cash in a shop </td>
+<td title="Empty or 0 = zero"><nobr>From <input id="cw_sh_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited. A positive integer adds a new row to the table"><nobr>To <input id="cw_sh_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="cw_sh_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="cw_sh_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="cw_sh_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="cw_sh_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Some cards have a fee when you transfer money from the credit card to your bank account. Currently, this is not supported by Datafanger, but we can simulate the effect here.">Fee for each transfer to account</td>
+<td title="Empty or 0 = zero"><nobr>From <input id="tr_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited. A positive integer adds a new row to the table"><nobr>To <input id="tr_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="tr_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="tr_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="tr_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="tr_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Some cards have dedicated fee for paying bills in the internet bank with your credit card. Currently, this is not supported by Datafanger, but we can simulate the effect here.">Fee when bills are paid in the internet bank with credit card </td>
+<td title="Empty or 0 = zero"><nobr>From <input id="bi_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited. A positive integer adds a new row to the table"><nobr>To <input id="bi_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="bi_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="bi_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="bi_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="bi_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Some cards have a dedicated fee when you pay with the mobile phone in a shop (but charge your card). Currently, this is not supported by Datafanger, but we can simulate the effect here.">Fee when credit card is charged with the mobile phone </td>
+<td title="Empty or 0 = zero"><nobr>From <input id="mo_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited. A positive integer adds a new row to the table"><nobr>To <input id="mo_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="mo_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="mo_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="mo_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="mo_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="A periodical fixed fee currently has a field in the database, but there might also be a fee as percentage of credit (for each payment term) - currently not harvested from the companies.">Periodic fee as percentage of credit limit </td>
+<td title="Empty or 0 = zero"><nobr>From <input id="pe_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited. A positive integer adds a new row to the table"><nobr>To <input id="pe_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="pe_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="pe_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="pe_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="pe_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Dedicated fee for cash withdrawals outside Europe. Currently, this is not supported by Datafanger, but we can simulate the effect here. If the field is empty, the general fee for cash withdrawals abroad is used.">Fee for cash withdrawal outside Europe</td>
+<td title="Empty or 0 = zero"><nobr>From <input id="cw_wo_lo_01" value="0" type="text"> NOK</nobr></td>
+<td title="Empty, &quot;Unlimited&quot; or 0 = unlimited. A positive integer adds a new row to the table"><nobr>To <input id="cw_wo_hi_01" value="Unlimited" onchange="addaRow(this)" type="text"> </nobr></td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="cw_wo_ff_01" value="0" type="text"> NOK</nobr></td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="cw_wo_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="cw_wo_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="cw_wo_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Currently, there is a fixed fee for purchases in the database. But the data model should accomodate a percentage fee as well.">Fee as percentage of domestic purchase </td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="pu_do_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="pu_do_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="pu_do_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Currently, there is a common fee for all international purchases in the database. But we might in the future also need a field for a percentage fee for purchases abroad, but inside Europa.">Fee as percentage of purchase abroad, inside Europe </td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td title="Fee as a percentage of the withdrawal/purchase."><nobr><input id="pu_eu_pf_01" value="0" type="text">%</nobr></td>
+<td title="When there is a percentage fee, but also ar rule saying that the fee could not be smaller than a certain minimum amount."><nobr><input id="pu_eu_mi_01" value="0" type="text"> NOK</nobr></td>
+<td title="An eventual exchange fee in additon to the other fixed - and percentage fee."><nobr><input id="pu_eu_ex_01" value="0" type="text"> %</nobr></td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr class="grey">
+<td title="Origination fee is a one-time fee paid at the time of establishing the credit line. Currently harvested neither in Datafanger nor in Test client.">One-time origination fee</td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td title="Fixed fee for each withdrawal/purchase."><nobr><input id="o_ff" value="0" type="text"> NOK</nobr></td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr class="grey">
+<td title="Dedicated fee for receiving paper bills in the mail. Currently, this is not supported by Datafanger, but we can simulate the effect here. If the field is empty, zero is assumed.">Fee for paper bill pr. snail mail</td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td title="Fixed fee for each bill."><nobr><input id="pb_ff" value="0" type="text"> NOK</nobr></td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td title="">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr class="grey"><td>Rounding direction </td><td>&nbsp;</td><td>&nbsp;</td><td colspan="3"><select id="round_rule"><option selected="selected" value="0">Payments rounded according to normal rounding rules</option><option value="1">Payments are rounded up</option><option value="2">Payments are rounded down</option></select></td><td colspan="2">&nbsp;</td></tr>
+<tr class="grey"><td>Rounding precision </td><td>&nbsp;</td><td>&nbsp;</td><td colspan="3"><select id="round_pres"><option selected="selected" value="0">Payments rounded to nearest cent</option><option value="1">Payments rounded to nearest currency unit</option></select></td><td colspan="2">&nbsp;</td></tr>
+<tr class="grey"><td>Placement of remainder </td><td>&nbsp;</td><td>&nbsp;</td><td colspan="3"><select id="rem_place"><option selected="selected" value="0">Payed / renumerated with the last payment  </option><option value="1">Ignored</option></select></td><td colspan="2">&nbsp;</td></tr>
+
+
+<tr class="ros"><td colspan="8" class="labeltext"><i><b>Administrator settings: Play around with presumptions</b></i></td></tr>
+
+<tr class="ros" title="Some cards have different interest rates for purchase and casth withdrawal. Currently, this is not supported by Datafanger, but we can simulate the effect here."><td colspan="3" class="labeltext">Increase interest rate for cash withdrawal by</td><td colspan="2"><input id="ic" type="text"> %</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="ros" title="Effective interest rate is computed as if all purchases and withdrawals were done the first day. But for the computation of total payback amount, we can make more realistic assumptions."><td colspan="3" class="labeltext">Deduct days from interest free days</td><td colspan="3"><input id="dd" type="text"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="ros" title="Finansportalen's credit card calculator equals the inital debt to the first month's usage for all transactions but foreign purchases, where the annual usage is used. Unchecking means that first year's usage is used for both."><td colspan="3" class="labeltext">Initial debt computed as Finansportalen 2013</td><td align="right"><input id="fin" checked="checked" type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td colspan="2">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="ros" title="It seems that the public regulation on how one should compute effective interest rate exempts currency exchange fees, probably because you would have to pay them anyway."><td colspan="3" class="labeltext">Include currency exchange fees in computation of effective interest rate</td><td align="right"><input id="currfee" type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td colspan="1">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</tbody></table>
+
+<input onclick="onClick=cardBench()" value="Compute" type="button">
+<div id="sumfield"></div>
+<br>
+<div id="carddiv">
+</div>
+
+
+
+<article>
+	<h1 id="graph_heading"></h1>		
+	<canvas id="graphSpace" width="800" height="500"></canvas>		
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
