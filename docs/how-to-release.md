@@ -27,15 +27,20 @@ How to release
     mvn versions:set -DnewVersion=2.0.0
     ```
 
-* Build project
+* Build project and deploy to local repository
 
     ```
-    mvn clean install
+    mvn clean deploy
     ```
+
+    This will deploy free-loan into directory `target/mvn-repo`
+
 
 * Create a release from a tag `v2.0.0` in GitHub. Write release notes. Attach an artifact.
 
-* Upload artifact to Bintray.
+* Go to [Bintray maven repository](https://bintray.com/finansportalen/maven/no.finansportalen%3Afree-loan/view) and create new version `2.0.0`.
+
+* zip `target/mvn-repo/no` directory and upload to Bintray version `2.0.0` (make sure to check "explode archive" option).
 
 * Revert project version to snapshot
 
