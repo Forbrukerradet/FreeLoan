@@ -4,7 +4,7 @@
 Finansportalen.no's calculation software of effective interest rate
 
 # Maven
-To include `free-loan` librray to your Maven project:
+To include `free-loan` library to your Maven project:
 
 1. Add following repository to your Maven configuration:
 
