@@ -3,6 +3,12 @@
 # FreeLoan
 Finansportalen.no's calculation software of effective interest rate
 
+# Documentation
+
+* [FreeCard](/docs/freeCard.pdf)
+* [FreeLoan (short version)](/docs/freeLoan_short.docx)
+* [FreeLoan (long version)](/docs/freeLoan_long.docx)
+
 # Maven
 To include `free-loan` library to your Maven project:
 
