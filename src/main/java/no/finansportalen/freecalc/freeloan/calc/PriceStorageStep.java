@@ -99,7 +99,7 @@ public class PriceStorageStep {
     }
 
     /**
-     * @param <b>(OBLIGATORY)</b> The annual interest rate in the segment (as % per anno)
+     * @param annualInterest <b>(OBLIGATORY)</b> The annual interest rate in the segment (as % per anno)
      */
     public void setAnnualInterest(double annualInterest) {
         this.annualInterest = annualInterest;
