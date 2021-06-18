@@ -530,7 +530,7 @@ class IntervallengthSeparateCalc {
     }
 
     /**
-     * @param roundDirection NORMAL: Annuities are rounded after normal rules UP: Rounded up DOWN: Rounded down
+     * @param round_direction NORMAL: Annuities are rounded after normal rules UP: Rounded up DOWN: Rounded down
      */
     public void setRoundDirection(Utils.RoundDirection round_direction) {
         this.roundDirection = round_direction;

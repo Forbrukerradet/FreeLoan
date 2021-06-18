@@ -62,7 +62,7 @@ import java.util.List;
  * </p>
  * 
  * <p>
- * When there is an initial period where only interest is paid ('interestonly_periods' > 0) and the function computes
+ * When there is an initial period where only interest is paid ('interestonly_periods' {@literal >} 0) and the function computes
  * periods, the interest only periods are added to the payment time. The reason is that if it is subtracted, as is
  * otherwise the case, the periodic payments increase in the down payment period. Here, they would increase to an amount
  * bigger than the user has indicated he wants as as his periodical payment.
@@ -2762,7 +2762,7 @@ public class FreeLoan {
     }
 
     /**
-     * @param interestonly_periods Integer > 0: The initial interest-only period wanted by the borrower
+     * @param interestonly_periods Integer {@literal >} 0: The initial interest-only period wanted by the borrower
      * 
      * <p>Default: 0</p>
      */
@@ -2771,7 +2771,7 @@ public class FreeLoan {
     }
 
     /**
-     * @param roundDirection <b>NORMAL:</b> Annuities are rounded after normal rules <b>UP:</b> Rounded up
+     * @param round_direction <b>NORMAL:</b> Annuities are rounded after normal rules <b>UP:</b> Rounded up
      * <b>DOWN:</b> Rounded down
      * 
      * <p>Default: NORMAL</p>
@@ -2821,7 +2821,7 @@ public class FreeLoan {
     }
 
     /**
-     * @param capitalization_freq <b>0:</b> 12 (Capitalization 12 times a year). <b>Integer>0:</b> Any number of
+     * @param capitalization_freq <b>0:</b> 12 (Capitalization 12 times a year). <b>Integer{@literal >} 0:</b> Any number of
      * capitalizations per year.
      * 
      * <p>Default: 0</p>
@@ -2831,7 +2831,7 @@ public class FreeLoan {
     }
 
     /**
-     * @param interestonly_periods_max Integer >= 0: The maximal interest only-period offered by the bank. In years.
+     * @param interestonly_periods_max Integer {@literal >=} 0: The maximal interest only-period offered by the bank. In years.
      * 
      * <p>Default: 0</p>
      */
@@ -2840,7 +2840,7 @@ public class FreeLoan {
     }
 
     /**
-     * @param fee_processing Number >= 0: Processing fee: A one-time fee of a fixed sum to be payed at the beginning of the loan period.
+     * @param fee_processing Number {@literal >=} 0: Processing fee: A one-time fee of a fixed sum to be payed at the beginning of the loan period.
      * 
      * <p>Default: 0</p>
      */
@@ -2849,7 +2849,7 @@ public class FreeLoan {
     }
 
     /**
-     * @param fee_document Number >= 0: Document preparation fee: A one-time fee of a fixed sum to be payed at the beginning of the loan
+     * @param fee_document Number {@literal >=} 0: Document preparation fee: A one-time fee of a fixed sum to be payed at the beginning of the loan
      * period.
      * 
      * <p>Default: 0</p>
@@ -2859,7 +2859,7 @@ public class FreeLoan {
     }
 
     /**
-     * @param fee_percentage Number >= 0: Percentage fee: One-time fee to be payed at the beginning of the loan period computed out of the
+     * @param fee_percentage Number {@literal >=} 0: Percentage fee: One-time fee to be payed at the beginning of the loan period computed out of the
      * principle (gross loan). 2 = 2%.
      * 
      * <p>Default: 0</p>

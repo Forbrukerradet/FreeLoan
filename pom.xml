@@ -1,12 +1,32 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-   
-    <name>freelan</name>
-	<groupId>no.finansportalen</groupId>
-	<artifactId>free-loan</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+
+    <groupId>no.finansportalen</groupId>
+    <artifactId>free-loan</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Finansportalen.no's calculation software of effective interest rate.</description>
+    <url>https://github.com/Forbrukerradet/FreeLoan/</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/Forbrukerradet/FreeLoan/blob/master/LICENSE</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/Forbrukerradet/FreeLoan.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Forbrukerradet/FreeLoan.git</developerConnection>
+        <url>https://github.com/Forbrukerradet/FreeLoan/tree/master</url>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <distributionManagement>
         <repository>
@@ -85,6 +105,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
